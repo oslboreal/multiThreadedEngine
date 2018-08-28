@@ -1,0 +1,24 @@
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Processor.csprojResolveAssemblyReference.cache
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Processor.csproj.GenerateResource.Cache
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Nosis.Framework.Datos.dll
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\NS.Librerias.Datos.dll
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\NS.Librerias.dll
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Nosis.Framework.Datos.pdb
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Nosis.Framework.Datos.xml
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\NS.Librerias.pdb
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\NS.Librerias.xml
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\NS.Librerias.Datos.xml
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\TextStreamer.pdb
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Proccesor.FormPrincipal.resources
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Nosis.Framework.Diagnostico.dll
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Nosis.Framework.Diagnostico.pdb
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Nosis.Framework.Diagnostico.xml
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\NS.Librerias.Winforms.dll
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\NS.Librerias.Winforms.pdb
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\NS.Librerias.Winforms.xml
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Procesador MultiThreading.exe.config
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Procesador MultiThreading.exe
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Procesador MultiThreading.pdb
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Procesador MultiThreading.exe
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Procesador MultiThreading.pdb
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Processor.Properties.Resources.resources
