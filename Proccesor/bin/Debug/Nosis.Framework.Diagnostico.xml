@@ -1,0 +1,979 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nosis.Framework.Diagnostico</name>
+    </assembly>
+    <members>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.UseOptimizedDatasetSchema">
+            <summary>
+            Use the optimized fast Dataset Schema format (default = True)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.UseFastGuid">
+            <summary>
+            Use the fast GUID format (default = True)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.SerializeNullValues">
+            <summary>
+            Serialize null values to the output (default = True)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.UseUTCDateTime">
+            <summary>
+            Use the UTC date format (default = True)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.ShowReadOnlyProperties">
+            <summary>
+            Show the readonly properties of types in the output (default = False)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.UsingGlobalTypes">
+            <summary>
+            Use the $types extension to optimise the output json (default = True)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.IgnoreCaseOnDeserialize">
+            <summary>
+            Ignore case when processing json and deserializing 
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.EnableAnonymousTypes">
+            <summary>
+            Anonymous types have read only properties 
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.UseExtensions">
+            <summary>
+            Enable fastJSON extensions $types, $type, $map (default = True)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.UseEscapedUnicode">
+            <summary>
+            Use escaped unicode i.e. \uXXXX format for non ASCII characters (default = True)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.KVStyleStringDictionary">
+            <summary>
+            Output string key dictionaries as "k"/"v" format (default = False) 
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.UseValuesOfEnums">
+            <summary>
+            Output Enum values instead of names (default = False)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.IgnoreAttributes">
+            <summary>
+            Ignore attributes to check for (default : XmlIgnoreAttribute)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters.ParametricConstructorOverride">
+            <summary>
+            If you have parametric and no default constructor for you classes (default = False)
+            
+            IMPORTANT NOTE : If True then all initial values within the class will be ignored and will be not set
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Comunes.FastJson.JSONProperty">
+            <summary>
+            Defino por MN.
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.Parameters">
+            <summary>
+            Globally set-able parameters for controlling the serializer
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToNiceJSON(System.Object,Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters)">
+            <summary>
+            Create a formatted json string (beautified) from an object
+            </summary>
+            <param name="obj"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToJSON(System.Object)">
+            <summary>
+            Create a json representation for an object
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToJSON(System.Object,Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters)">
+            <summary>
+            Create a json representation for an object with parameter override on this call
+            </summary>
+            <param name="obj"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.Parse(System.String)">
+            <summary>
+            Parse a json string and generate a Dictionary&lt;string,object&gt; or List&lt;object&gt; structure
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToDynamic(System.String)">
+            <summary>
+            Create a .net4 dynamic object from the json string
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToObject``1(System.String)">
+            <summary>
+            Create a typed generic object from the json
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToObject``1(System.String,Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters)">
+            <summary>
+            Create a typed generic object from the json with parameter override on this call
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToObject(System.String)">
+            <summary>
+            Create an object from the json
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToObject(System.String,Nosis.Framework.Diagnostico.Comunes.FastJson.JSONParameters)">
+            <summary>
+            Create an object from the json with parameter override on this call
+            </summary>
+            <param name="json"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ToObject(System.String,System.Type)">
+            <summary>
+            Create an object of type from the json
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.FillObject(System.Object,System.String)">
+            <summary>
+            Fill a given object with the json represenation
+            </summary>
+            <param name="input"></param>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.DeepCopy(System.Object)">
+            <summary>
+            Deep copy an object i.e. clone to a new object
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.DeepCopy``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.Beautify(System.String)">
+            <summary>
+            Create a human readable string from the json 
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.RegisterCustomType(System.Type,Nosis.Framework.Diagnostico.Comunes.FastJson.Serialize,Nosis.Framework.Diagnostico.Comunes.FastJson.Deserialize)">
+            <summary>
+            Register custom type handlers for your own types not natively handled by fastJSON
+            </summary>
+            <param name="type"></param>
+            <param name="serializer"></param>
+            <param name="deserializer"></param>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.FastJson.JSON.ClearReflectionCache">
+            <summary>
+            Clear the internal reflection cache so you can start from new (you will loose performance)
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Comunes.FastJson.JsonParser">
+            <summary>
+            This class encodes and decodes JSON strings.
+            Spec. details, see http://www.json.org/
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Comunes.IniHelper">
+            <summary>
+            Helper de acceso a archivos de configuración formato INI
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.GetKeys(System.String,System.String)">
+            <summary>
+            Devuelve una lista todas las claves contenidas en una sección
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.GetCategories(System.String)">
+            <summary>
+            Devuelve una lista con todas las secciones contenidas en el archivo
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.GetValue(System.String,System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.GetValue(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.GetInt32Value(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.GetInt32Value(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.GetBooleanValue(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.GetBooleanValue(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.ToInt32(System.String)">
+            <summary>
+            Convierte un string a entero
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IniHelper.ToBoolean(System.String)">
+            <summary>
+            Convierte un string a boolean
+            soportando distintas nomenclaturas
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Comunes.IPHelper">
+            <summary>
+            Helper de IP
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IPHelper.ParseLocalAddress(System.String)">
+            <summary>
+            Devuelve la interfaz local asociada a una subred
+            o IPAddress.Any si no hay coincidencias
+            </summary>
+            <param name="subnet">String en formato "192.168.7"</param>
+            <returns>Devuelve la interfaz local o IPAddress.Any si no hay coincidencias</returns>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IPHelper.GetInterfaces">
+            <summary>
+            Devuelve la lista de interfaces locales que tienen IP asignada
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.IPHelper.GetPreferredInterface">
+            <summary>
+            Devuelve la IP local en este orden:
+            Red de servicio (.7 o .6)
+            Red interna (.12 .13 .14)
+            o IPAddress.Any si no hay coincidencias
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Comunes.JsonHelper">
+            <summary>
+            Helper de serialización JSON
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.JsonHelper.Serializar(System.Object)">
+            <summary>
+            Serializa un objecto
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.JsonHelper.ObtenerTipo(System.Object)">
+            <summary>
+            Obtiene el tipo de dato de un objeto usando alias para algunos tipos nativos
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.JsonHelper.Deserializar(System.String,System.String)">
+            <summary>
+            Deserializa objeto usando alias para algunos tipos de dato nativos
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Comunes.JsonHelper.Deserializar``1(System.String)">
+            <summary>
+            Deserializa objeto de un tipo específico
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.AmbienteNotificacion">
+            <summary>
+            Ambientes de ntoficación
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.AmbienteNotificacion.Produccion">
+            <summary>
+            Ambiente de producción
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.AmbienteNotificacion.Desarrollo">
+            <summary>
+            Ambiente de desarrollo
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.AmbienteNotificacion.Testing">
+            <summary>
+            Ambiente de testing
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.NotificacionRecibidaEventArgs">
+            <summary>
+            Argumento del evento NotificacionRecibida
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionRecibidaEventArgs.Servicio">
+            <summary>
+            Servicio de notificación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionRecibidaEventArgs.Ambiente">
+            <summary>
+            Ambiente de notificación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionRecibidaEventArgs.Mensaje">
+            <summary>
+            Paquete serializado JSON con encoding UTF8
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionRecibidaEventArgs.Paquete">
+            <summary>
+            Paquete deserializado o null si el mensaje es inválido
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionRecibidaEventArgs.Notificacion">
+            <summary>
+            Notificación deserializada o null si la notificación es inválida
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.NotificacionRecibidaEventHandler">
+            <summary>
+            Delegado del evento NotificacionRecibida
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.NotificacionAplicacion">
+            <summary>
+            Notificación de aplicaciones
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionAplicacion.Tipo">
+            <summary>
+            Tipo de aplicación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionAplicacion.Instancias">
+            <summary>
+            Cantidad de instancias disponibles para atención simultánea
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionAplicacion.Procesando">
+            <summary>
+            Indica si está procesando mensajes
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionAplicacion.Estado">
+            <summary>
+            Estado actual de la aplicación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionAplicacion.Novedad">
+            <summary>
+            Mensaje que acompaña una advertencia / error
+            o null si el estado es OK / NoDisponible
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionAplicacion.Parametros">
+            <summary>
+            Datos adicionales
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.TipoAplicacion">
+            <summary>
+            Tipos de aplicación que reportan al monitor
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.TipoAplicacion.Aplicacion">
+            <summary>
+            Aplicación genérica
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.TipoAplicacion.MotorVB6">
+            <summary>
+            Motor VB6
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.TipoAplicacion.MotorNet">
+            <summary>
+            Motor NET con instancias independientes
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.TipoAplicacion.MotorMT">
+            <summary>
+            Motor NET multithread
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.TipoAplicacion.Web">
+            <summary>
+            Sitio o servicio web
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.TipoAplicacion.SqlServer">
+            <summary>
+            Servidor de base de datos
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.TipoAplicacion.BaseDeDatos">
+            <summary>
+            Base de datos
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.EstadoAplicacion">
+            <summary>
+            Estados de la aplicación
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.EstadoAplicacion.NoDisponible">
+            <summary>
+            La aplicación no informa funcionamiento
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.EstadoAplicacion.OK">
+            <summary>
+            Funcionamiento normal
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.EstadoAplicacion.Advertencia">
+            <summary>
+            Informa una condición de avertencia 
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.EstadoAplicacion.Error">
+            <summary>
+            La aplicación no está funcionando correctamente
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor">
+            <summary>
+            Notificación de estado de un servidor
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.SistemaOperativo">
+            <summary>
+            Sistema operativo y service pack
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.CpuProcesadores">
+            <summary>
+            Cantidad de procesadores (sockets en mother)
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.CpuNucleosFisicos">
+            <summary>
+            Cantidad de núcleos físicos sumando todos los procesadores
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.CpuNucleosLogicos">
+            <summary>
+            Si el equipo usa HyperThreading duplica los núcleos físicos
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.CpuUso">
+            <summary>
+            Porcentaje de uso total de CPU
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.MemoriaFisicaTotal">
+            <summary>
+            Memoria física total en MB
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.MemoriaFisicaLibre">
+            <summary>
+            Memoria física libre en MB
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.Discos">
+            <summary>
+            Unidades de disco
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidor.Version">
+            <summary>
+            Version actual del servicio
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidorDisco">
+            <summary>
+            Notificacion de una unidad de disco
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidorDisco.Unidad">
+            <summary>
+            Letra de la unidad de disco
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidorDisco.Total">
+            <summary>
+            Capacidad total en MB
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.NotificacionServidorDisco.Libre">
+            <summary>
+            Espacio libre disponible en MB
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.Notificador">
+            <summary>
+            Notificador de eventos por Multicast.
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Default">
+            <summary>
+            Instancia default del Notificador.
+            <para>Servicio obtenido de .config > Notificaciones.Servicio</para>
+            <para>Ambiente obtenido de .config > Notificaciones.Ambiente</para>
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Servicio">
+            <summary>
+            Devuelve el servicio de notificación asignado a esta instancia
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Ambiente">
+            <summary>
+            Devuelve el ambiente de notificación asignado a esta instancia
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Equipo">
+            <summary>
+            Devuelve o asigna el nombre del equipo que origina la notificación,
+            por defecto se usa el nombre netbios
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Proceso">
+            <summary>
+            Devuelve o asigna el nombre del proceso que origina la notificación,
+            por defecto se usa el nombre de proceso win32
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Instancia">
+            <summary>
+            Devuelve o asigna la instancia del proceso que origina la notificación,
+            por defecto se usa el PID del proceso win32
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Hub">
+            <summary>
+            Devuelve el hub actual de donde se están recibiendo notificaciones
+            </summary>
+        </member>
+        <member name="E:Nosis.Framework.Diagnostico.Notificaciones.Notificador.NotificacionRecibida">
+            <summary>
+            Evento de notificacion recibida.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.#ctor">
+            <summary>
+            Inicializa una nueva instancia de Notificador.
+            <para>Ambiente obtenido de .config > Notificaciones.Ambiente</para>
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.#ctor(Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacion)">
+            <summary>
+            Inicializa una nueva instancia de Notificador.
+            <para>Ambiente obtenido de .config > Notificaciones.Ambiente</para>
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.#ctor(Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacion,Nosis.Framework.Diagnostico.Notificaciones.AmbienteNotificacion)">
+            <summary>
+            Inicializa una nueva instancia de Notificador.
+            <para>Ambiente: DESA | TEST | PROD</para>
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Dispose">
+            <summary>
+            Libera recursos asociados a la instancia de Notificador.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Informar(System.Object)">
+            <summary>
+            Informa una notificación a cualquier notificador que esté escuchando.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Informar(Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion)">
+            <summary>
+            Informa una notificación a todos los hubs que estén definidos en este servidor
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.IniciarRecepcion">
+            <summary>
+            Configura al notificador para comenzar a escuchar notificaciones.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.On``1(System.Action{``0})">
+            <summary>
+            Evento de navegacion recibida utilizado para invocar callback según el tipo esperado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.SocketRecepcion_MensajeRecibido(System.IAsyncResult)">
+            <summary>
+            Handler de recepción de un mensaje del hub
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.ProcesarNotificacionRecibida(System.String)">
+            <summary>
+            Dispara evento de NotificacionRecibda
+            siempre y cuando el datagrama recibido pase las validaciones
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.Timer_Tick(System.Object)">
+            <summary>
+            Timer de alive al hub para avisar que este receptor continúa suscripto
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.IniciarSuscripcion">
+            <summary>
+            Selecciona el hub donde se enviarán alives de suscripción
+            rotando sobre los hubs existentes
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.Notificador.EnviarAlive">
+            <summary>
+            Envía alive al hub para mantener viva la suscripción
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion">
+            <summary>
+            Paquete de notificación genérico
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion.Servicio">
+            <summary>
+            Servicio de notificación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion.Ambiente">
+            <summary>
+            Ambiente de notificación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion.Equipo">
+            <summary>
+            Nombre NETBIOS del equipo que origina la notificación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion.Proceso">
+            <summary>
+            Nombre del proceso Win32 que origina la notificación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion.Instancia">
+            <summary>
+            PID del proceso que origina la notificación
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion.TipoNotificacion">
+            <summary>
+            Tipo de notificación necesario para deserializar Dato
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.PaqueteNotificacion.DatoNotificacion">
+            <summary>
+            Notificación serializada JSON con encoding UTF8
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacion">
+            <summary>
+            Servicios de notificacion
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacion.Monitoreo">
+            <summary>
+            Monitoreo de aplicaciones
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacion.Sac">
+            <summary>
+            Servicio SAC
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacion.Fex">
+            <summary>
+            Fex
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacionHelper.ParsearServicio(System.String)">
+            <summary>
+            Parsea un texto a un tipo de servicio de notificador.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacionHelper.ParsearAmbiente(System.String)">
+            <summary>
+            Parsea ambiente de notificación
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacionHelper.ParsearPuerto(Nosis.Framework.Diagnostico.Notificaciones.AmbienteNotificacion)">
+            <summary>
+            Obtiene el puerto de servicio asociado al ambiente
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacionHelper.ConfigServicio">
+            <summary>
+            Intenta obtener el servicio de configuración
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Notificaciones.ServicioNotificacionHelper.ConfigAmbiente">
+            <summary>
+            Intenta obtener el ambiente de distintos lugares de configuración
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Logger">
+            <summary>
+            Clase de log
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Logger.Default">
+            <summary>
+            Logger default de la aplicación
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.#ctor">
+            <summary>
+            Inicializa un nuevo logger default usando nombre de la aplicación
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.#ctor(System.String)">
+            <summary>
+            Inicializa un nuevo logger
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Logger.Ubicacion">
+            <summary>
+            Devuelve la ruta completa sin el nombre de archivo
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.Logger.Archivo">
+            <summary>
+            Devuelve la ruta completa del archivo de log que utiliza este logger
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Debug(System.String)">
+            <summary>
+            Graba evento conteniendo información técnica que ayude a depurar la aplicación
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Debug(System.String,System.Object[])">
+            <summary>
+            Graba evento conteniendo información técnica que ayude a depurar la aplicación
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Info(System.String)">
+            <summary>
+            Graba evento informando situaciones normales de la aplicación
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Info(System.String,System.Object[])">
+            <summary>
+            Graba evento informando situaciones normales de la aplicación
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Warn(System.String)">
+            <summary>
+            Graba evento advirtiendo anomalías en un proceso aunque haya finalizado correctamente
+            (ej. asumir defaults por falta de configuración, o exceso en tiempo de proceso)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Warn(System.String,System.Object[])">
+            <summary>
+            Graba evento advirtiendo anomalías en un proceso aunque haya finalizado correctamente
+            (ej. asumir defaults por falta de configuración, o exceso en tiempo de proceso)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Warn(System.Exception,System.String,System.Object[])">
+            <summary>
+            Graba evento advirtiendo anomalías en un proceso aunque haya finalizado correctamente
+            (ej. asumir defaults por falta de configuración, o exceso en tiempo de proceso)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Error(System.String)">
+            <summary>
+            Graba evento cuando un proceso individual no pudo completarse pero la aplicación continúa funcionando
+            (ej. argumentos en un pedido, o error de acceso a la base de datos)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Error(System.String,System.Object[])">
+            <summary>
+            Graba evento cuando un proceso individual no pudo completarse pero la aplicación continúa funcionando
+            (ej. argumentos en un pedido, o error de acceso a la base de datos)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Error(System.Exception,System.String,System.Object[])">
+            <summary>
+            Graba evento cuando un proceso individual no pudo completarse pero la aplicación continúa funcionando
+            (ej. argumentos en un pedido, o error de acceso a la base de datos)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Fatal(System.String)">
+            <summary>
+            Graba evento cuando la aplicación completa no puede continuar realizando procesamiento
+            (ej. error permanente de conexión a base de datos, o falta de configuración necesaria para iniciar)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Fatal(System.String,System.Object[])">
+            <summary>
+            Graba evento cuando la aplicación completa no puede continuar realizando procesamiento
+            (ej. error permanente de conexión a base de datos, o falta de configuración necesaria para iniciar)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.Fatal(System.Exception,System.String,System.Object[])">
+            <summary>
+            Graba evento cuando la aplicación completa no puede continuar realizando procesamiento
+            (ej. error permanente de conexión a base de datos, o falta de configuración necesaria para iniciar)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.GrabarMensaje(Nosis.Framework.Diagnostico.Severidad,System.String)">
+            <summary>
+            Grabacion interna de un evento
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.GrabarMensaje(Nosis.Framework.Diagnostico.Severidad,System.String,System.String)">
+            <summary>
+            Grabacion interna de un evento
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.GrabarEvento(System.String,System.String)">
+            <summary>
+            Realiza append al final del archivo
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.FormatearEvento(Nosis.Framework.Diagnostico.Severidad,System.String)">
+            <summary>
+            Devuelve la linea de log completa para ser grabada
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.ArmarMensaje(System.String,System.Object[])">
+            <summary>
+            Arma el mensaje para loggear
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.ArmarMensaje(System.Exception,System.String,System.Object[])">
+            <summary>
+            Arma el mensaje para loggear
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.ArmarMensajeError(System.Exception,System.String,System.Object[])">
+            <summary>
+            Arma el mensaje de error para loggear
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.ObtenerArchivoLogs">
+            <summary>
+            Arma el path al archivo de log
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.ObtenerArchivoErrores">
+            <summary>
+            Arma el path al archivo de errores
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Diagnostico.Logger.ObtenerArchivo(System.String)">
+            <summary>
+            Arma el path a un archivo cualquiera de logs
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.Severidad">
+            <summary>
+            Nivel de severidad de log
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Severidad.Debug">
+            <summary>
+            Debug solo se usa para mostrar información técnica
+            que ayude a depurar la aplicación
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Severidad.Info">
+            <summary>
+            Informativo se usa para mostrar situaciones de funcionamiento normal
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Severidad.Warn">
+            <summary>
+            Adevertencia se usa cuando el proceso pudo completarse aunque hubo ciertas anomalías 
+            (ej. asumir defaults por falta de configuración, o exceso en tiempo de proceso)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Severidad.Error">
+            <summary>
+            Error se usa cuando un proceso individual no pudo completarse pero la aplicación continúa funcionando
+            (ej. argumentos en un pedido, o error de acceso a la base de datos)
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Diagnostico.Severidad.Fatal">
+            <summary>
+            Fatal se usa cuando la aplicación no puede continuar procesando requerimientos
+            (ej. error permanente de conexión a base de datos, o falta de configuración necesaria para iniciar)
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Diagnostico.LoggerConfig">
+            <summary>
+            Acceso a la configuracion
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.LoggerConfig.Debug">
+            <summary>
+            Devuelve si se graban eventos de debug
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.LoggerConfig.NombreProceso">
+            <summary>
+            Devuelve el nombre del proceso.
+            Por defecto se obtiene el nombre reflection (solo en aplicaciones desktop)
+            y se puede modificar con el parámetro "Logger.Proceso" del archivo de configuración
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Diagnostico.LoggerConfig.Ubicacion">
+            <summary>
+            Devuelve la carpeta donde se almacenan los logs
+            Por defecto se utiliza "D:\Logs"
+            y se puede modificar con el parámetro "Logger.Ubicacion" del archivo de configuración
+            </summary>
+        </member>
+    </members>
+</doc>

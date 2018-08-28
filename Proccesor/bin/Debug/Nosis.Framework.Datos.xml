@@ -1,0 +1,1243 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nosis.Framework.Datos</name>
+    </assembly>
+    <members>
+        <member name="T:Nosis.Framework.Datos.BlobStream">
+            <summary>
+            Stream para manipular blobs en chunks
+            a partir de SqlServer 2005
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.BlobStream.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.String,System.String,System.Object)">
+            <summary>
+            Inicializa una instancia de la clase BlobStream
+            </summary>
+            <param name="conn">Conexión a la base</param>
+            <param name="transaction">Transacción o null si graba blob sin transaccionar</param>
+            <param name="tableName">Tabla de destino</param>
+            <param name="blobColumn">Columna de destino</param>
+            <param name="keyColumn">Clave primaria de la tabla de destino</param>
+            <param name="keyValue">Valor de la clave primaria</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.BlobStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Escribe chunk binario a la base de datos
+            </summary>
+            <param name="buffer">Buffer de datos a escribir</param>
+            <param name="index">Posición inicial dentro del buffer</param>
+            <param name="count">Cantidad de bytes a partir de la posición inicial</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.BlobStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Lee chunk binario de la base de datos
+            </summary>
+            <param name="buffer">Buffer de datos recibidos</param>
+            <param name="offset">Posición inicial dentro del buffer</param>
+            <param name="count">Cantidad de bytes a partir de la posición inicial</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Datos.BlobStream.Dispose(System.Boolean)">
+            <summary>
+            Libera recursos utilizados
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.BlobStream.CanRead">
+            <summary>
+            CanRead
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.BlobStream.CanWrite">
+            <summary>
+            CanWrite
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.BlobStream.CanSeek">
+            <summary>
+            CanSeek
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.BlobStream.Flush">
+            <summary>
+            Flush
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.BlobStream.Length">
+            <summary>
+            Length
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.BlobStream.Position">
+            <summary>
+            Position
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.BlobStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Seek
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.BlobStream.SetLength(System.Int64)">
+            <summary>
+            SetLength
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.Configuracion.IniHelper">
+            <summary>
+            Helper de acceso a archivos de configuración formato INI
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.GetKeys(System.String,System.String)">
+            <summary>
+            Devuelve una lista todas las claves contenidas en una sección
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.GetCategories(System.String)">
+            <summary>
+            Devuelve una lista con todas las secciones contenidas en el archivo
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.GetValue(System.String,System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.GetValue(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.GetInt32Value(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.GetInt32Value(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.GetBooleanValue(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.GetBooleanValue(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.ToInt32(System.String)">
+            <summary>
+            Convierte un string a entero
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.IniHelper.ToBoolean(System.String)">
+            <summary>
+            Convierte un string a boolean
+            soportando distintas nomenclaturas
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.Configuracion.Parametros">
+            <summary>
+            Acceso a archivos de configuracion globales [SAC|NS]_Parametros.ini
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Datos.Configuracion.Parametros.NS">
+            <summary>
+            Accede a archivo de configuración C:\NS_Librerias\Librerias_NS\NS_Parametros.ini
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Datos.Configuracion.Parametros.Sac">
+            <summary>
+            Accede a archivo de configuración C:\NS_Librerias\Librerias_SAC\SAC_Parametros.ini
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Datos.Configuracion.Parametros.ReadWriteLock">
+            <summary>
+            Administrador de accesos a recursos.
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Datos.Configuracion.Parametros.VigenciaCache">
+            <summary>
+            Vigencia de cache antes de volver a ir a buscar a origen.
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Datos.Configuracion.Parametros.MaxIntentos">
+            <summary>
+            Cantidad de intentos por error en operaciones de archivo.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.#cctor">
+            <summary>
+            Constructor estatico
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.ObtenerNombreAplicacion">
+            <summary>
+            Obtiene el nombre de la aplicacion que esta usando la libreria.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.#ctor(System.String)">
+            <summary>
+            Constructor de instancia privado para uso del singleton
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Configuracion.Parametros.Archivo">
+            <summary>
+            Devuelve o asigna el archivo .ini
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerValor(System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerValor(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerValorInt32(System.String,System.String)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerValorInt32(System.String,System.String,System.Int32)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerValorBoolean(System.String,System.String)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerValorBoolean(System.String,System.String,System.Boolean)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerStringConexion(System.String,System.String,System.String)">
+            <summary>
+            Devuelve la cadena de conexion asociada a una clave de la sección "Servidores"
+            o una excepción si la clave no existe.
+            </summary>
+            <remarks>
+            El llamador de este método necesita estar autenticado
+            </remarks>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerStringConexion(System.String,System.String,System.String,System.String)">
+            <summary>
+            Devuelve la cadena de conexion usando el servidor especificado,
+            o una excepción si el usuario no es valido
+            </summary>
+            <remarks>
+            El llamador de este método necesita estar autenticado
+            </remarks>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerStringCubo(System.String)">
+            <summary>
+            Devuelve una cadena de conexion (formato OLAP) asociada a una clave de la sección "Servidores"
+            o una excepción si la clave no existe
+            </summary>
+            <remarks>
+            El llamador de este método necesita estar autenticado
+            </remarks>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LeerStringEdmx(System.String,System.String)">
+            <summary>
+            Devuelve una cadena de conexion (formato Entity Framework) asociada a una clave de la sección "Servidores",
+            o una excepción si la clave no existe
+            </summary>
+            <remarks>
+            El llamador de este método necesita estar autenticado
+            </remarks>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.LimpiarCache">
+            <summary>
+            Vacia la cache.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.ArchivoModificado(System.Object,System.IO.FileSystemEventArgs)">
+            <summary>
+            Archivo de parametros modificador.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.SleepAleatorio">
+            <summary>
+            Sleep aleatorio de 1 a 200 ms 
+            para evitar colisiones en reintentos
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Configuracion.Parametros.ObtenerCredenciales(System.String,System.String@,System.String@)">
+            <summary>
+            Devuelve la clave de SQL correspondiente a un catalogo / usuario
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.ContextoBase">
+            <summary>
+            Clase base de la cual heredan todas las clases de accesos a datos
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBase.#ctor">
+            <summary>
+            Constructor default crea una conexion propia
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBase.#ctor(System.Data.IDbConnection)">
+            <summary>
+            Constructor que suminstra una conexion que seguramente
+            estará enlistada en una transacción con otros objetos
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBase.Dispose">
+            <summary>
+            Libera los recursos asociados al objeto
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.ContextoBase.Connection">
+            <summary>
+            Devuelve la conexión que está siendo utilizada por el objeto
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.ContextoBase.Transaction">
+            <summary>
+            Devuelve la transacción que está siendo utilizada por el objeto
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBase.BeginTransaction">
+            <summary>
+            Inicia una transacción en la conexión a la base de datos.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBase.CommitTransaction">
+            <summary>
+            Commitea una transacción en la conexión a la base de datos.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBase.RollbackTransaction">
+            <summary>
+            Hace rollback de una transacción en la conexión a la base de datos.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBase.CleanTransaction">
+            <summary>
+            Asegura la destrucción de cualquier transacción en curso
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBase.CrearConexion">
+            <summary>
+            Devuelve una nueva conexión abierta que debe ser cerrada al terminar de usarse
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nosis.Framework.Datos.ContextoBaseExtensions">
+            <summary>
+            Extensiones a ContextoBase
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.ExecuteReader(Nosis.Framework.Datos.ContextoBase,System.String,System.Object[])">
+            <summary>
+            Ejecuta un query devolviendo un reader
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.ExecuteReader(Nosis.Framework.Datos.ContextoBase,System.Data.CommandType,System.String,System.Int32)">
+            <summary>
+            Ejecuta un query devolviendo un reader
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.ExecuteNonQuery(Nosis.Framework.Datos.ContextoBase,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries sin respuesta
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.ExecuteNonQuery(Nosis.Framework.Datos.ContextoBase,System.Data.CommandType,System.String,System.Int32)">
+            <summary>
+            Ejecucion de queries sin respuesta
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.ExecuteScalarInt32(Nosis.Framework.Datos.ContextoBase,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.ExecuteScalarInt32(Nosis.Framework.Datos.ContextoBase,System.Data.CommandType,System.String,System.Int32)">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.ExecuteScalar(Nosis.Framework.Datos.ContextoBase,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.ExecuteScalar(Nosis.Framework.Datos.ContextoBase,System.Data.CommandType,System.String,System.Int32)">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ContextoBaseExtensions.CreateFluentCommand``1(Nosis.Framework.Datos.ContextoBase,System.String)">
+            <summary>
+            Crea y devuelve un FluentCommand asociado a la conexión
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.CommandExtensions">
+            <summary>
+            Extensiones de un DbCommand
+            </summary>
+            <remarks>
+            No se uso IDbCommand porque los parametros no soportan AddRange
+            </remarks>
+        </member>
+        <member name="M:Nosis.Framework.Datos.CommandExtensions.SetParameters(System.Data.Common.DbCommand,System.Object[])">
+            <summary>
+            Asigna todos los parámetros 
+            usando características de descubrimiento y caché de parámetros
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.ConnectionExtensions">
+            <summary>
+            Extensiones a IDbConnection
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteReader(System.Data.IDbConnection,System.String,System.Object[])">
+            <summary>
+            Ejecuta un query devolviendo un reader
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteReader(System.Data.IDbConnection,System.String,System.Data.IDbTransaction,System.Object[])">
+            <summary>
+            Ejecuta un query devolviendo un reader
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteReader(System.Data.IDbConnection,System.Data.CommandType,System.String,System.Int32)">
+            <summary>
+            Ejecuta un query devolviendo un reader
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteReader(System.Data.IDbConnection,System.Data.CommandType,System.String,System.Data.IDbTransaction,System.Int32)">
+            <summary>
+            Ejecuta un query devolviendo un reader
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries sin respuesta
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Data.IDbTransaction,System.Object[])">
+            <summary>
+            Ejecucion de queries sin respuesta
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteNonQuery(System.Data.IDbConnection,System.Data.CommandType,System.String,System.Int32)">
+            <summary>
+            Ejecucion de queries sin respuesta
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteNonQuery(System.Data.IDbConnection,System.Data.CommandType,System.String,System.Data.IDbTransaction,System.Int32)">
+            <summary>
+            Ejecucion de queries sin respuesta
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteScalarInt32(System.Data.IDbConnection,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteScalarInt32(System.Data.IDbConnection,System.String,System.Data.IDbTransaction,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteScalarInt32(System.Data.IDbConnection,System.Data.CommandType,System.String,System.Int32)">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteScalarInt32(System.Data.IDbConnection,System.Data.CommandType,System.String,System.Data.IDbTransaction,System.Int32)">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteScalar(System.Data.IDbConnection,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteScalar(System.Data.IDbConnection,System.String,System.Data.IDbTransaction,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteScalar(System.Data.IDbConnection,System.Data.CommandType,System.String,System.Int32)">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.ExecuteScalar(System.Data.IDbConnection,System.Data.CommandType,System.String,System.Data.IDbTransaction,System.Int32)">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.ConnectionExtensions.CreateFluentCommand``1(System.Data.IDbConnection,System.String)">
+            <summary>
+            Crea y devuelve un FluentCommand asociado a la conexión
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.Conversiones.DateInterval">
+            <summary>
+            Intervalos para la funcion DateDiff
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.Conversiones.FechaHelper">
+            <summary>
+            Helper de fechas
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.#cctor">
+            <summary>
+             Constructor estatico
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Conversiones.FechaHelper.HusoLocal">
+            <summary>
+            Huso local obtenido de la configuración de la máquina
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.AgregarDiasHabiles(System.DateTime,System.Int32)">
+            <summary>
+            Suma o Resta dias hábiles a una fecha
+            (no entiende de feriados)
+            </summary>
+            <param name="date">Fecha original</param>
+            <param name="dias">Cantidad de días positivo o negativo</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.LunesAnterior(System.DateTime)">
+            <summary>
+            Devuelve el lunes anterior a la fecha solicitada
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.PrimeraFechaDelMes(System.DateTime)">
+            <summary>
+            Devuelve el 1er dia del mes con hora 0:00:00.000
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.UltimaFechaDelMes(System.DateTime)">
+            <summary>
+            Devuelve el ultimo día del mes con hora 23:59:59.999
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.FinDeDia(System.DateTime)">
+            <summary>
+            Devuelve la misma fecha con hora 23:59:59.999
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.EsBisiesto(System.DateTime)">
+            <summary>
+            Retorna si el año de la fecha pasada es bisiesto
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.EsBisiesto(System.Int32)">
+            <summary>
+            Retorna si el año pasada es bisiesto
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.ToStringLocal(System.DateTime,System.String)">
+            <summary>
+            Formatea la fecha/hora con cultura es-AR
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.ToStringAmigable(System.DateTime)">
+            <summary>
+            Formatea una fecha utilizando 
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Conversiones.FechaHelper.CulturaLocal">
+            <summary>
+            Devuelve la cultura local
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.ParseExact(System.Int32)">
+            <summary>
+            Crea un DateTime a partir de una fecha numérica en formato yyyymmdd
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.ParseExact(System.Int32,System.Int32)">
+            <summary>
+            Crea un DateTime a partir de una fecha y hora
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.CalcularEdad(System.DateTime)">
+            <summary>
+            Calcula la edad 
+            </summary>        
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.FechaDateToInt(System.DateTime)">
+            <summary>
+            Convierte una fecha en formato Date a "int" (yyyyMMdd)
+            </summary>    
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.FechaTimeToInt(System.DateTime)">
+            <summary>
+            Convierte una fecha en formato Time a "int" (HHmmss)
+            </summary>    
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.DateDiff(Nosis.Framework.Datos.Conversiones.DateInterval,System.DateTime,System.DateTime)">
+            <summary>
+            Devuelve la diferencia entre 2 fechas, en un intervalo especificado
+            </summary>          
+        </member>
+        <member name="M:Nosis.Framework.Datos.Conversiones.FechaHelper.DateDiff(Nosis.Framework.Datos.Conversiones.DateInterval,System.DateTime,System.DateTime,System.DayOfWeek)">
+            <summary>
+            Devuelve la diferencia entre 2 fechas, en un intervalo especificado
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.DataReaderExtensions">
+            <summary>
+            Extensiones a la interfaz IDataReader
+            </summary>
+            <remarks>
+            Métodos ordenados alfabetico por tipo de dato
+            </remarks>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor boolean
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetBoolean(System.Data.IDataReader,System.String,System.Boolean)">
+            <summary>
+            Devuelve un valor boolean o un valor default por null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetNullableBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor boolean o null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetByte(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor byte
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetByte(System.Data.IDataReader,System.String,System.Byte)">
+            <summary>
+            Devuelve un valor byte o un valor default por null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetNullableByte(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor byte o null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor DateTime
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetDateTime(System.Data.IDataReader,System.String,System.DateTime)">
+            <summary>
+            Devuelve un valor DateTime o un valor default por null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetNullableDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor DateTime o null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetDecimal(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor decimal
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetDecimal(System.Data.IDataReader,System.String,System.Decimal)">
+            <summary>
+            Devuelve un valor Decimal o un valor default por null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetNullableDecimal(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor decimal o null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetDouble(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor double
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetDouble(System.Data.IDataReader,System.String,System.Double)">
+            <summary>
+            Devuelve un valor Double o un valor default por null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetNullableDouble(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor double o null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetInt32(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int32
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetInt32(System.Data.IDataReader,System.String,System.Int32)">
+            <summary>
+            Devuelve un valor Int32 o un valor default por null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetNullableInt32(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int32 o null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetInt64(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int64
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetInt64(System.Data.IDataReader,System.String,System.Int64)">
+            <summary>
+            Devuelve un valor Int64 o un valor default por null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetNullableInt64(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int64 o null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetString(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor string
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetString(System.Data.IDataReader,System.String,System.String)">
+            <summary>
+            Devuelve un valor String o un valor default por null
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.DataReaderExtensions.GetNullableString(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor String o null
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.FluentCommand`1">
+            <summary>
+            Wrapper liviano de comandos ADO.NET
+            </summary>
+            <remarks>
+            Basado en código open source de Chris Brandsma
+            </remarks>
+            <see>
+            http://fluentado.codeplex.com/
+            </see>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.#ctor">
+            <summary>
+            Inicializa una nueva instancia de la case FluentCommand
+            </summary>
+            <param name="commandText">Store producedure o sentencia SQL parametrizada</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.#ctor(System.String)">
+            <summary>
+            Inicializa una nueva instancia de la case FluentCommand
+            </summary>
+            <param name="commandText">Store producedure o sentencia SQL parametrizada</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetConnection(System.Data.IDbConnection)">
+            <summary>
+            Asigna la conexión al comando
+            </summary>
+            <param name="connection">Conexión abierta</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetTransaction(System.Data.IDbTransaction)">
+            <summary>
+            Asigna una transacción al comando
+            </summary>
+            <param name="transaction">Objeto transacción</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetCommandType(System.Data.CommandType)">
+            <summary>
+            Asigna el CommandType
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetCommandText(System.String)">
+            <summary>
+            Asigna el CommandText
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetCommandTimeout(System.Int32)">
+            <summary>
+            Asigna el CommandTimeout
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetMapper(System.Func{System.Data.IDataReader,`0})">
+            <summary>
+            Asigna una función para mapear el DataReader al objeto T
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetDirection(System.Data.ParameterDirection)">
+            <summary>
+            Asigna la dirección (input/output) del ultimo parametro agregado
+            </summary>
+            <param name="direction">ParameterDirection</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetParameters(System.Object[])">
+            <summary>
+            Asigna todos los parámetros 
+            usando características de descubrimiento y caché de parámetros
+            </summary>
+            <param name="list">Lista de parámetros en el mismo orden definido en el stored procedure</param>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.GetParamValue(System.String)">
+            <summary>
+            Devuelve el valor de un parámetro de output 
+            luego de haberse ejecutado el query
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AsReader">
+            <summary>
+            Devuelve el resultado en un DataReader
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AsList">
+            <summary>
+            Devuelve el resultado en un IList
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AsEnumerable">
+            <summary>
+            Devuelve un IEnumerable,
+            permitiendo hacer un foreach para consumir los objetos a medida que llegan del servidor
+            sin necesidad de cargarlos todos en memoria
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AsScalar">
+            <summary>
+            Devuelve la primer columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AsSingle">
+            <summary>
+            Devuelve la primera fila
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AsNonQuery">
+            <summary>
+            Ejecuta el query y devuelve la cantidad de filas afectadas,
+            excepto cuando el SP tiene la sentencia SET NOCOUNT ON
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.Add``1(System.String,``0)">
+            <summary>
+            Add
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddInt32(System.String)">
+            <summary>
+            AddInt
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddInt32(System.String,System.Int32)">
+            <summary>
+            AddInt
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddInt32(System.String,System.Nullable{System.Int32})">
+            <summary>
+            AddInt
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDecimal(System.String)">
+            <summary>
+            AddDecimal
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDecimal(System.String,System.Decimal)">
+            <summary>
+            AddDecimal
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDecimal(System.String,System.Nullable{System.Decimal})">
+            <summary>
+            AddDecimal
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDateTime(System.String)">
+            <summary>
+            AddDateTime
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDateTime(System.String,System.DateTime)">
+            <summary>
+            AddDateTime
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDateTime(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            AddDateTime
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDateTime2(System.String,System.DateTime)">
+            <summary>
+            AddDateTime2
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDateTime2(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            AddDateTime2
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDate(System.String)">
+            <summary>
+            AddDate (nuevo de SqlServer 2008)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDate(System.String,System.DateTime)">
+            <summary>
+            AddDate (nuevo de SqlServer 2008)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddDate(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            AddDate (nuevo de SqlServer 2008)
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddString(System.String,System.Int32,System.String)">
+            <summary>
+            AddString
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddString(System.String)">
+            <summary>
+            AddString
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddString(System.String,System.Int32)">
+            <summary>
+            AddString
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddString(System.String,System.String)">
+            <summary>
+            AddString
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddGuid(System.String)">
+            <summary>
+            AddGuid
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddGuid(System.String,System.Guid)">
+            <summary>
+            AddGuid
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddGuidID(System.String)">
+            <summary>
+            AddGuidID
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddBoolean(System.String)">
+            <summary>
+            AddBoolean
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.AddBoolean(System.String,System.Boolean)">
+            <summary>
+            AddBoolean
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.CreateParam(System.String,System.Data.SqlDbType,System.Object)">
+            <summary>
+            CreateParam
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.CreateParam(System.String,System.Data.SqlDbType)">
+            <summary>
+            CreateParam
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetParamValue(System.Object)">
+            <summary>
+            SetParamValue is used when setting parameter values 
+            and you want to ensure that a null value is set to DBNull.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.FluentCommand`1.SetGuidParamValue(System.Guid)">
+            <summary>
+            SetParamValue is used when setting parameter values 
+            and you want to ensure that a null value is set to DBNull.
+            </summary>
+        </member>
+        <member name="T:Nosis.Framework.Datos.SqlParameterCache">
+            <summary>
+            Cache de parametros de stored procedures
+            </summary>
+            <remarks>
+            La primera vez consulta a la base con el método DeriveParameters
+            </remarks>
+        </member>
+        <member name="M:Nosis.Framework.Datos.SqlParameterCache.GetParameters(System.String,System.String)">
+            <summary>
+            Devuelve los parámetros de un stored procedure
+            sin usar parámetro de retorno
+            </summary>
+            <param name="connectionString">String de conexión a la base</param>
+            <param name="spName">Nombre del stored procedure</param>
+            <returns>Array de parámetros del stored procedure</returns>
+        </member>
+        <member name="M:Nosis.Framework.Datos.SqlParameterCache.GetParameters(System.String,System.String,System.Boolean)">
+            <summary>
+            Devuelve los parámetros de un stored procedure
+            </summary>
+            <param name="connectionString">String de conexión a la base</param>
+            <param name="spName">Nombre del stored procedure</param>
+            <param name="includeReturnValueParameter">Especifica si devuelve en el primer parametro el valor de retorno</param>
+            <returns>Array de parámetros del stored procedure</returns>
+        </member>
+        <member name="M:Nosis.Framework.Datos.SqlParameterCache.DiscoverSpParameterSet(System.String,System.String,System.Boolean)">
+            <summary>
+            Descubrimiento de parametros con el método DeriveParameters
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.SqlParameterCache.CloneParameters(System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Clonación completa (deep) del array de parámetros
+            </summary>
+            <remarks>
+            Necesaria para evitar devolver la referencia a un elemento de cache
+            </remarks>
+        </member>
+        <member name="T:Nosis.Framework.Datos.Tipos.PeriodoMensual">
+            <summary>
+            Representa un periodo año-mes.
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Tipos.PeriodoMensual.Anio">
+            <summary>
+            Año del periodo.
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Tipos.PeriodoMensual.Mes">
+            <summary>
+            Mes del periodo.
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Tipos.PeriodoMensual.Valor">
+            <summary>
+            Valor del periodo.
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Tipos.PeriodoMensual.Valido">
+            <summary>
+            Determina si el periodo es valido.
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Tipos.PeriodoMensual.FechaInicio">
+            <summary>
+            Primer día del mes del periodo.
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Tipos.PeriodoMensual.FechaActual">
+            <summary>
+            Día actual del mes del periodo.
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Tipos.PeriodoMensual.FechaFin">
+            <summary>
+            Último día del mes del periodo.
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Datos.Tipos.PeriodoMensual.MinValue">
+            <summary>
+            Representa el menor valor posible para un PeriodoMensual.
+            </summary>
+        </member>
+        <member name="F:Nosis.Framework.Datos.Tipos.PeriodoMensual.MaxValue">
+            <summary>
+            Representa el mayor valor posible para un PeriodoMensual.
+            </summary>
+        </member>
+        <member name="P:Nosis.Framework.Datos.Tipos.PeriodoMensual.Hoy">
+            <summary>
+            Representa el valor de hoy para un PeriodoMensual.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.#ctor(System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.#ctor(System.DateTime)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Llena SerializationInfo con los datos necesarios para serializar el objeto de destino.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.Parse(System.String)">
+            <summary>
+            Convierte la representación de cadena especificada de una año y mes en su equivalente PeriodoMensual.
+            </summary>
+            <param name="periodo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.TryParse(System.String,Nosis.Framework.Datos.Tipos.PeriodoMensual@)">
+            <summary>
+            Convierte la representación de cadena de números a su equivalente de PeriodoMensual.
+            Un valor de retorno indica si la conversión tuvo éxito.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.AgregarMeses(System.Int32)">
+            <summary>
+            Devuelve un nuevo PeriodoMensual con el valor de esta instancia agregando el número de meses especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.AgregarAnios(System.Int32)">
+            <summary>
+            Devuelve un nuevo PeriodoMensual con el valor de esta instancia agregando el número de años especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.CompareTo(System.Object)">
+            <summary>
+            Compara esta instancia con un objeto especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.CompareTo(System.Int32)">
+            <summary>
+            Compara esta instancia con un valor int especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.CompareTo(Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Compara esta instancia con una instancia de PeriodoMensual especificada.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.Equals(System.Object)">
+            <summary>
+            Devuelve un valor que indica si esta instancia es igual al valor objet especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.Equals(System.Int32)">
+            <summary>
+            Devuelve un valor que indica si esta instancia es igual al valor int especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.Equals(Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Devuelve un valor que indica si esta instancia es igual al instancia de PeriodoMensual especificada.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.GetHashCode">
+            <summary>
+            Retorna el HashCode.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.ToString">
+            <summary>
+            Convierte el valor PeriodoMensual de esta instancia en la representación de cadena equivalente.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.Rango(Nosis.Framework.Datos.Tipos.PeriodoMensual,Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Especifica si esta instancia esta entre los periodos mensuales especificados.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_Implicit(System.Int32)~Nosis.Framework.Datos.Tipos.PeriodoMensual">
+            <summary>
+            Convervierte el valor int especificado en un PeriodoMensual.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_Implicit(System.DateTime)~Nosis.Framework.Datos.Tipos.PeriodoMensual">
+            <summary>
+            Convervierte el valor DateTime especificado en un PeriodoMensual.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_Subtraction(Nosis.Framework.Datos.Tipos.PeriodoMensual,Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Resta una PeriodoMensual especificado de otro PeriodoMensual especificado y devuelve la diferencia en meses.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_Subtraction(Nosis.Framework.Datos.Tipos.PeriodoMensual,System.Int32)">
+            <summary>
+            Resta una PeriodoMensual especificado de un valor int especificado y devuelve la diferencia en meses.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_Equality(Nosis.Framework.Datos.Tipos.PeriodoMensual,Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Determina si un PeriodoMensual especificado es igual a otro PeriodoMensual especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_Equality(Nosis.Framework.Datos.Tipos.PeriodoMensual,System.Int32)">
+            <summary>
+            Determina si un PeriodoMensual especificado es igual a un valor int especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_Inequality(Nosis.Framework.Datos.Tipos.PeriodoMensual,Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Determina si un PeriodoMensual especificado es distinto a otro PeriodoMensual especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_Inequality(Nosis.Framework.Datos.Tipos.PeriodoMensual,System.Int32)">
+            <summary>
+            Determina si un PeriodoMensual especificado es distinto a un valor int especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_GreaterThanOrEqual(Nosis.Framework.Datos.Tipos.PeriodoMensual,Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Determina si un PeriodoMensual especificado es mayor o igual a otro PeriodoMensual especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_GreaterThan(Nosis.Framework.Datos.Tipos.PeriodoMensual,Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Determina si un PeriodoMensual especificado es mayor a otro PeriodoMensual especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_LessThanOrEqual(Nosis.Framework.Datos.Tipos.PeriodoMensual,Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Determina si un PeriodoMensual especificado es menor o igual a otro PeriodoMensual especificado.
+            </summary>
+        </member>
+        <member name="M:Nosis.Framework.Datos.Tipos.PeriodoMensual.op_LessThan(Nosis.Framework.Datos.Tipos.PeriodoMensual,Nosis.Framework.Datos.Tipos.PeriodoMensual)">
+            <summary>
+            Determina si un PeriodoMensual especificado es menor a otro PeriodoMensual especificado.
+            </summary>
+        </member>
+    </members>
+</doc>

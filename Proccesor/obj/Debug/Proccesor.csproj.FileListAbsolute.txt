@@ -1,0 +1,9 @@
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Proccesor.exe.config
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Proccesor.exe
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\bin\Debug\Proccesor.pdb
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Proccesor.csprojResolveAssemblyReference.cache
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Proccesor.Form1.resources
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Proccesor.Properties.Resources.resources
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Proccesor.csproj.GenerateResource.Cache
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Proccesor.exe
+C:\Users\mvallejo\Desktop\Visual Studio Projects\Proccesor\Proccesor\obj\Debug\Proccesor.pdb

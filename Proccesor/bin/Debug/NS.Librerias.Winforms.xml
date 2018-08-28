@@ -1,0 +1,507 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NS.Librerias.Winforms</name>
+    </assembly>
+    <members>
+        <member name="M:NS.Librerias.Winforms.Actualizador.IniciarActualizacionServicio">
+            <summary>
+            Valida si hay actualizaciones del servicio y la instala.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Actualizador.IniciarActualizacionAplicacion">
+            <summary>
+            Valida si hay actualizaciones de la App. y la instala.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ActualizadorHttp.ComprobarActualizaciones(System.String,System.String,System.String,System.String)">
+            <summary>
+            Valida si hay actualizacion via Http
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ActualizadorHttp.DescargarYActualizarServicio(System.String,System.String,System.String,System.String)">
+            <summary>
+            Descarga y actualiza el servicio via Http
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ActualizadorHttp.DescargarYActualizarAplicacion(System.String,System.String,System.String,System.String)">
+            <summary>
+            Descarga y actualiza la aplicacion via Http
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Winforms.Comunes.ZipStorer.Compression">
+            <summary>
+            Compression method enumeration
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.Compression.Store">
+            <summary>Uncompressed storage</summary> 
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.Compression.Deflate">
+            <summary>Deflate compression method</summary>
+        </member>
+        <member name="T:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry">
+            <summary>
+            Represents an entry in Zip file directory
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.Method">
+            <summary>Compression method</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.FilenameInZip">
+            <summary>Full path and filename as stored in Zip</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.FileSize">
+            <summary>Original file size</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.CompressedSize">
+            <summary>Compressed file size</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.HeaderOffset">
+            <summary>Offset of header information inside Zip storage</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.FileOffset">
+            <summary>Offset of file inside Zip storage</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.HeaderSize">
+            <summary>Size of header information</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.Crc32">
+            <summary>32-bit checksum of entire file</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.ModifyTime">
+            <summary>Last modification time of file</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.Comment">
+            <summary>User comment for file</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.EncodeUTF8">
+            <summary>True if UTF8 encoding for filename and comments, false if default (CP 437)</summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry.ToString">
+            <summary>Overriden method</summary>
+            <returns>Filename in Zip</returns>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.EncodeUTF8">
+            <summary>True if UTF8 encoding for filename and comments, false if default (CP 437)</summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.Comunes.ZipStorer.ForceDeflating">
+            <summary>Force deflate algotithm even if it inflates the stored file. Off by default.</summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.Create(System.String,System.String)">
+            <summary>
+            Method to create a new storage file
+            </summary>
+            <param name="_filename">Full path of Zip file to create</param>
+            <param name="_comment">General comment for Zip file</param>
+            <returns>A valid ZipStorer object</returns>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.Create(System.IO.Stream,System.String)">
+            <summary>
+            Method to create a new zip storage in a stream
+            </summary>
+            <param name="_stream"></param>
+            <param name="_comment"></param>
+            <returns>A valid ZipStorer object</returns>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.Open(System.String,System.IO.FileAccess)">
+            <summary>
+            Method to open an existing storage file
+            </summary>
+            <param name="_filename">Full path of Zip file to open</param>
+            <param name="_access">File access mode as used in FileStream constructor</param>
+            <returns>A valid ZipStorer object</returns>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.Open(System.IO.Stream,System.IO.FileAccess)">
+            <summary>
+            Method to open an existing storage from stream
+            </summary>
+            <param name="_stream">Already opened stream with zip contents</param>
+            <param name="_access">File access mode for stream operations</param>
+            <returns>A valid ZipStorer object</returns>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.AddFile(NS.Librerias.Winforms.Comunes.ZipStorer.Compression,System.String,System.String,System.String)">
+            <summary>
+            Add full contents of a file into the Zip storage
+            </summary>
+            <param name="_method">Compression method</param>
+            <param name="_pathname">Full path of file to add to Zip storage</param>
+            <param name="_filenameInZip">Filename and path as desired in Zip directory</param>
+            <param name="_comment">Comment for stored file</param>        
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.AddStream(NS.Librerias.Winforms.Comunes.ZipStorer.Compression,System.String,System.IO.Stream,System.DateTime,System.String)">
+            <summary>
+            Add full contents of a stream into the Zip storage
+            </summary>
+            <param name="_method">Compression method</param>
+            <param name="_filenameInZip">Filename and path as desired in Zip directory</param>
+            <param name="_source">Stream object containing the data to store in Zip</param>
+            <param name="_modTime">Modification time of the data to store</param>
+            <param name="_comment">Comment for stored file</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.Close">
+            <summary>
+            Updates central directory (if pertinent) and close the Zip storage
+            </summary>
+            <remarks>This is a required step, unless automatic dispose is used</remarks>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.ReadCentralDir">
+            <summary>
+            Read all the file records in the central directory 
+            </summary>
+            <returns>List of all entries in directory</returns>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.ExtractFile(NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry,System.String)">
+            <summary>
+            Copy the contents of a stored file into a physical file
+            </summary>
+            <param name="_zfe">Entry information of file to extract</param>
+            <param name="_filename">Name of file to store uncompressed data</param>
+            <returns>True if success, false if not.</returns>
+            <remarks>Unique compression methods are Store and Deflate</remarks>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.ExtractFile(NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry,System.IO.Stream)">
+            <summary>
+            Copy the contents of a stored file into an opened stream
+            </summary>
+            <param name="_zfe">Entry information of file to extract</param>
+            <param name="_stream">Stream to store the uncompressed data</param>
+            <returns>True if success, false if not.</returns>
+            <remarks>Unique compression methods are Store and Deflate</remarks>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.RemoveEntries(NS.Librerias.Winforms.Comunes.ZipStorer@,System.Collections.Generic.List{NS.Librerias.Winforms.Comunes.ZipStorer.ZipFileEntry})">
+            <summary>
+            Removes one of many files in storage. It creates a new Zip file.
+            </summary>
+            <param name="_zip">Reference to the current Zip object</param>
+            <param name="_zfes">List of Entries to remove from storage</param>
+            <returns>True if success, false if not</returns>
+            <remarks>This method only works for storage of type FileStream</remarks>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Comunes.ZipStorer.Dispose">
+            <summary>
+            Closes the Zip file stream
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Winforms.ControlBarrasActividad">
+            <summary>
+            Control Barras de Actividades.
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Winforms.ControlBarrasActividad.Estado">
+            <summary>
+            Estados de la barra de actividad.
+            <para>Determina el color de la barra.</para>
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.ControlBarrasActividad.cantBarras">
+            <summary>
+            Cantidad de barras del control.
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.ControlBarrasActividad.cantBarrasBueno">
+            <summary>
+            Cantidad de barras consecutivas correspondientes al estado Bueno.
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.ControlBarrasActividad.cantBarrasNeutro">
+            <summary>
+            Cantidad de barras consecutivas correspondientes al estado Neutro.
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.ControlBarrasActividad.cantBarrasMalo">
+            <summary>
+            Cantidad de barras consecutivas correspondientes al estado Malo.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ControlBarrasActividad.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ControlBarrasActividad.AgregarBarra(NS.Librerias.Winforms.ControlBarrasActividad.Estado)">
+            <summary>
+            Agrega un nueva barra con es estado determinado.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ControlBarrasActividad.Limpiar">
+            <summary>
+            Limpia el estado de todas las barras.
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.ControlBarrasActividad.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ControlBarrasActividad.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ControlBarrasActividad.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Winforms.FormBase">
+            <summary>
+            Representa una ventana con funcionalidad basica para una interfaz de usuario.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.FormBase.PosicionDesdeConfig">
+            <summary>
+            Determina si la posicion inicial del formulario la recupera del App.config.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.FormBase.PosicionAConfig">
+            <summary>
+            Determina si la posicion inicial del formulario la recupera del App.config.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.FormBase.MedidasDesdeConfig">
+            <summary>
+            Determina si la posicion inicial del formulario la recupera del App.config.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.FormBase.MedidasAConfig">
+            <summary>
+            Determina si la posicion inicial del formulario la recupera del App.config.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.FormBase.MantenerEnPantalla">
+            <summary>
+            Determina si la ventana se acomoda a las medidas de la ventana.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.FormBase.RecordarEstadoVentana">
+            <summary>
+            Determina si recuerda el estado del formulario.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormBase.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormBase.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Form.Load event.
+            </summary>
+            <param name="e">An System.EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormBase.OnResizeEnd(System.EventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Form.ResizeEnd event.
+            </summary>
+            <param name="e">A System.EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormBase.OnFormClosing(System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Form.FormClosing event.
+            </summary>
+            <param name="e">A System.Windows.Forms.FormClosingEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormBase.CargarPosicionVentana">
+            <summary>
+            Asigna la posicion pretendia a la ventana considerando la resolución. 
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormBase.CargarMedidasVentana">
+            <summary>
+            Asigna las medidas pretendias a la ventana considerando la resolución. 
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.TraerLoggerProceso">
+            <summary>
+            Recupera el valor del nodo Logger.Proceso de App.config.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.TraerAplicacioNombre">
+            <summary>
+            Recupera el valor del nodo Aplicacion.Nombre de App.config.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.TraerPosicion(System.String)">
+            <summary>
+            Recupera la posicion de la ventana de App.config.
+            </summary>
+            <param name="formName">Nombre del formulario.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.GuardarPosicion(System.String,System.Drawing.Point)">
+            <summary>
+            Guarda la nueva posicion de la ventana en App.config.
+            </summary>
+            <param name="formName">Nombre del formulario.</param>
+            <param name="posicion">Posicion a guardar.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.TraerMedidas(System.String)">
+            <summary>
+            Recupera las medidas de la ventana de App.config.
+            </summary>
+            <param name="formName">Nombre del formulario.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.GuardarMedidas(System.String,System.Drawing.Size)">
+            <summary>
+            Guarda las nuevas medidas de la ventana en App.config.
+            </summary>
+            <param name="formName">Nombre del formulario.</param>
+            <param name="posicion">Medidas a guardar.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.TraerEstadoVentana(System.String)">
+            <summary>
+            Recupera el estado de la ventana de App.config.
+            </summary>
+            <param name="formName">Nombre del formulario.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.GuardarEstadoVentana(System.String,System.Windows.Forms.FormWindowState)">
+            <summary>
+            Guarda el estado de la ventana en App.config.
+            </summary>
+            <param name="formName">Nombre del formulario.</param>
+            <param name="estadoVentana">Estado de la ventana.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.AppConfigHelper.TraerSimultaneidad">
+            <summary>
+            Recupera el valor de Simultaneidad del App.config.
+            </summary>
+            <param name="formName">Nombre del formulario.</param>
+        </member>
+        <member name="P:NS.Librerias.Winforms.Helpers.ApplicationHelper.Titulo">
+            <summary>
+            Titulo formateado para las ventanas.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.Helpers.ApplicationHelper.Version">
+            <summary>
+            Version formateada de la aplicacion.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.Helpers.ApplicationHelper.Nombre">
+            <summary>
+            Nombre de la aplicacion.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.Helpers.ApplicationHelper.FechaCompilacion">
+            <summary>
+            Fecha de compilacion de la aplicacion.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.Helpers.DesingModeHelper.IsInDesignMode">
+            <summary>
+            Determina si la aplicación esta visualizandose desde Visual Studio.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.ParseHelper.ParseInt(System.String,System.Int32)">
+            <summary>
+            Convierte la cadena especificada de un valor numerico en su equivalente System.Int32.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.Helpers.ParseHelper.ParseBool(System.String,System.Boolean)">
+            <summary>
+            Convierte la cadena especificada de un valor lógico en su equivalente System.Boolean.
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Winforms.FormPrincipalBase">
+            <summary>
+            Representa una ventana con funcionalidad basica para una interfaz principal de usuario.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.FormPrincipalBase.TituloIncluirVersion">
+            <summary>
+            Determina si en el titulo se imprime la versión.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.FormPrincipalBase.TituloIncluirFechaCompilacion">
+            <summary>
+            Determina si en el titulo se imprime la fecha de compilación.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormPrincipalBase.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormPrincipalBase.OnLoad(System.EventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Form.Load event.
+            </summary>
+            <param name="e">An System.EventArgs that contains the event data.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.FormPrincipalBase.OnFormClosed(System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Form.FormClosed event.
+            </summary>
+            <param name="e">A System.Windows.Forms.FormClosedEventArgs that contains the event data.</param>
+        </member>
+        <member name="T:NS.Librerias.Winforms.ProgressLabel">
+            <summary>
+            ProgressBar con posibilidad de setearle texto.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.ProgressLabel.TextFormat">
+            <summary>
+            Gets or sets the alignment of text in the label.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Winforms.ProgressLabel.TextAlign">
+            <summary>
+            Gets or sets the alignment of text in the label.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ProgressLabel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ProgressLabel.OnCreateControl">
+            <summary>
+            Raises the System.Windows.Forms.Control.CreateControl method.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ProgressLabel.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Processes Windows messages.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ProgressLabel.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the System.Windows.Forms.Control.Paint event.
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Winforms.ProgressLabel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ProgressLabel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:NS.Librerias.Winforms.ProgressLabel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Winforms.SingleInstance">
+            <summary>
+            Permite la ejecución de una sola instancia de la aplicación.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.SingleInstance.Start">
+            <summary>
+            Inicia la ejecución de una sola instancia de la aplicación.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Winforms.SingleInstance.Stop">
+            <summary>
+            Detiene la sincronizador de la instancia de la aplicación.
+            </summary>
+        </member>
+    </members>
+</doc>

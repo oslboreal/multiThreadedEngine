@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NS.Librerias.Datos</name>
+    </assembly>
+    <members>
+        <member name="T:NS.Librerias.Datos.DataReaderExtensions">
+            <summary>
+            Extensiones a la interfaz IDataReader
+            </summary>
+            <remarks>
+            Métodos ordenados alfabetico por tipo de dato
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor boolean
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetBoolean(System.Data.IDataReader,System.String,System.Boolean)">
+            <summary>
+            Devuelve un valor boolean o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetNullableBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor boolean o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetByte(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor byte
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetByte(System.Data.IDataReader,System.String,System.Byte)">
+            <summary>
+            Devuelve un valor byte o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetNullableByte(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor byte o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor DateTime
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetDateTime(System.Data.IDataReader,System.String,System.DateTime)">
+            <summary>
+            Devuelve un valor DateTime o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetNullableDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor DateTime o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetDecimal(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor decimal
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetDecimal(System.Data.IDataReader,System.String,System.Decimal)">
+            <summary>
+            Devuelve un valor Decimal o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetNullableDecimal(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor decimal o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetDouble(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor double
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetDouble(System.Data.IDataReader,System.String,System.Double)">
+            <summary>
+            Devuelve un valor Double o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetNullableDouble(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor double o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetInt32(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int32
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetInt32(System.Data.IDataReader,System.String,System.Int32)">
+            <summary>
+            Devuelve un valor Int32 o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetNullableInt32(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int32 o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetString(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor string
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetString(System.Data.IDataReader,System.String,System.String)">
+            <summary>
+            Devuelve un valor String o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.DataReaderExtensions.GetNullableString(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor String o null
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Datos.BlobStream">
+            <summary>
+            Stream para manipular blobs en chunks
+            a partir de SqlServer 2005
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.BlobStream.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.String,System.String,System.Object)">
+            <summary>
+            Inicializa una instancia de la clase BlobStream
+            </summary>
+            <param name="connection">Conexión a la base</param>
+            <param name="transaction">Transacción o null si graba blob sin transaccionar</param>
+            <param name="tableName">Tabla de destino</param>
+            <param name="blobColumn">Columna de destino</param>
+            <param name="keyColumn">Clave primaria de la tabla de destino</param>
+            <param name="keyValue">Valor de la clave primaria</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.BlobStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Escribe chunk binario a la base de datos
+            </summary>
+            <param name="buffer">Buffer de datos a escribir</param>
+            <param name="index">Posición inicial dentro del buffer</param>
+            <param name="count">Cantidad de bytes a partir de la posición inicial</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.BlobStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Lee chunk binario de la base de datos
+            </summary>
+            <param name="buffer">Buffer de datos recibidos</param>
+            <param name="index">Posición inicial dentro del buffer</param>
+            <param name="count">Cantidad de bytes a partir de la posición inicial</param>
+            <returns></returns>
+        </member>
+        <member name="M:NS.Librerias.Datos.BlobStream.Dispose(System.Boolean)">
+            <summary>
+            Libera recursos utilizados
+            </summary>
+        </member>
+    </members>
+</doc>

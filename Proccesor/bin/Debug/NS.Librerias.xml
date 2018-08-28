@@ -1,0 +1,2335 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NS.Librerias</name>
+    </assembly>
+    <members>
+        <member name="T:NS.Librerias.Configuracion.IniHelper">
+            <summary>
+            Helper de acceso a archivos de configuración formato INI
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.GetKeys(System.String,System.String)">
+            <summary>
+            Devuelve una lista todas las claves contenidas en una sección
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.GetCategories(System.String)">
+            <summary>
+            Devuelve una lista con todas las secciones contenidas en el archivo
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.GetValue(System.String,System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.GetValue(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.GetInt32Value(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.GetInt32Value(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.GetBooleanValue(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.GetBooleanValue(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.InvalidCastException"/>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.ToInt32(System.String)">
+            <summary>
+            Convierte un string a entero
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.IniHelper.ToBoolean(System.String)">
+            <summary>
+            Convierte un string a boolean
+            soportando distintas nomenclaturas
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Configuracion.Parametros">
+            <summary>
+            Acceso a archivos de configuracion globales [SAC|NS]_Parametros.ini
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Configuracion.Parametros.NS">
+            <summary>
+            Accede a archivo de configuración C:\NS_Librerias\Librerias_NS\NS_Parametros.ini
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Configuracion.Parametros.Sac">
+            <summary>
+            Accede a archivo de configuración C:\NS_Librerias\Librerias_SAC\SAC_Parametros.ini
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.#cctor">
+            <summary>
+            Constructor estatico
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.#ctor(System.String)">
+            <summary>
+            Constructor de instancia privado para uso del singleton
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerValor(System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerValor(System.String,System.String,System.String)">
+            <summary>
+            Devuelve el valor string asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerValorInt32(System.String,System.String)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerValorInt32(System.String,System.String,System.Int32)">
+            <summary>
+            Devuelve el valor entero asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerValorBoolean(System.String,System.String)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o una excepción si la clave no existe
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerValorBoolean(System.String,System.String,System.Boolean)">
+            <summary>
+            Devuelve el valor boolean asociado a una clave
+            o el valor por omisión si la clave no existe
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerStringConexion(System.String,System.String)">
+            <summary>
+            Devuelve la cadena de conexion asociada a una clave de la sección "Servidores"
+            o una excepción si la clave no existe.
+            </summary>
+            <remarks>
+            El llamador de este método necesita estar autenticado
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerStringConexion(System.String,System.String,System.String)">
+            <summary>
+            Devuelve la cadena de conexion usando el servidor especificado,
+            o una excepción si el usuario no es valido
+            </summary>
+            <remarks>
+            El llamador de este método necesita estar autenticado
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerStringCola(System.String)">
+            <summary>
+            Devuelve el "FormatName" necesario para abrir una cola MSMQ
+            </summary>
+            <remarks>
+            El valor en el .ini soporta dos formatos
+            1. FormatName completo de la cola
+            2. [NombreCola]_[IP] siendo IP último octeto de red 7
+            </remarks>
+            <param name="nombreCola">Referente a la sección "Colas_MSMQ"</param>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerStringCubo(System.String)">
+            <summary>
+            Devuelve una cadena de conexion (formato OLAP) asociada a una clave de la sección "Servidores"
+            o una excepción si la clave no existe
+            </summary>
+            <remarks>
+            El llamador de este método necesita estar autenticado
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.LeerStringEdmx(System.String,System.String)">
+            <summary>
+            Devuelve una cadena de conexion (formato Entity Framework) asociada a una clave de la sección "Servidores",
+            o una excepción si la clave no existe
+            </summary>
+            <remarks>
+            El llamador de este método necesita estar autenticado
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Configuracion.Parametros.ObtenerCredenciales(System.String,System.String@,System.String@)">
+            <summary>
+            Devuelve la clave de SQL correspondiente a un catalogo / usuario
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Configuracion.Parametros.Archivo">
+            <summary>
+            Devuelve o asigna el archivo .ini
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Criptografia.NetClean">
+            <summary>
+            Helpers de encriptación compatible con la librería NetClean VB6
+            </summary>
+            <remarks>
+            Código migrado de VB6
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Criptografia.NetClean.Encriptar(System.String)">
+            <summary>
+            Encripta un texto
+            </summary>
+            <param name="texto">Texto a encriptar</param>
+            <returns>Devuelve el texto encriptado o String.Empty en caso de error</returns>
+        </member>
+        <member name="M:NS.Librerias.Criptografia.NetClean.Desencriptar(System.String)">
+            <summary>
+            Desencripta un texto
+            </summary>
+            <param name="cifrado">Texto cifrado para desencriptar</param>
+            <returns>Devuelve el texto desencriptado o String.Empty en caso de error</returns>
+        </member>
+        <member name="M:NS.Librerias.Criptografia.NetClean.ConvertirEnNumeros(System.String)">
+            <summary>
+            Intenta convertir en Letras
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Criptografia.NetClean.ConvertEnLetra(System.String)">
+            <summary>
+            Intenta Convertir en Letra
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Criptografia.NetClean.ArmarEncabezado(System.Int32@)">
+            <summary>
+            Arma el TXT de Inicio + Calculo indiceValor
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Criptografia.NetClean.LetrasAlAzar(System.Int32)">
+            <summary>
+            Regresa N cantidad de Letras al Azar (en mayúscula)
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Datos.Sql.ConnectionExtensions">
+            <summary>
+            Extensiones a IDbConnection
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.ExecuteReader(System.Data.IDbConnection,System.String,System.Object[])">
+            <summary>
+            Ejecuta un query devolviendo un reader
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.ExecuteReader(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Int32,System.Object[])">
+            <summary>
+            Ejecuta un query devolviendo un reader
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries sin respuesta
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Int32,System.Object[])">
+            <summary>
+            Ejecucion de queries sin respuesta
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.ExecuteScalarInt32(System.Data.IDbConnection,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.ExecuteScalarInt32(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Int32,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.ExecuteScalar(System.Data.IDbConnection,System.String,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.ExecuteScalar(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Int32,System.Object[])">
+            <summary>
+            Ejecucion de queries devolviendo el valor de la primera columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.CreateFluentCommand``1(System.Data.IDbConnection,System.String)">
+            <summary>
+            Crea y devuelve un FluentCommand asociado a la conexión
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.BeginTransaction(System.Data.IDbConnection)">
+            <summary>
+            Inicia una transacción en la base de datos.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.CommitTransaction(System.Data.IDbConnection)">
+            <summary>
+            Commitea una transacción en la base de datos.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.ConnectionExtensions.RollbackTransaction(System.Data.IDbConnection)">
+            <summary>
+            Hace rollback de una transacción en la base de datos.
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Datos.PrefijoCuit">
+            <summary>
+            Sexo de la persona
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Datos.PrefijoCuit.Indeterminado">
+            <summary>
+            Indeterminado
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Datos.PrefijoCuit.Femenino">
+            <summary>
+            CUIT es persona Femenina
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Datos.PrefijoCuit.Masculino">
+            <summary>
+            CUIT es persona Masculino
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Datos.PrefijoCuit.Empresa">
+            <summary>
+            CUIT es Empresa
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Datos.Sql.BlobStream">
+            <summary>
+            Stream para manipular blobs en chunks
+            a partir de SqlServer 2005
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.BlobStream.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.String,System.String,System.Object)">
+            <summary>
+            Inicializa una instancia de la clase BlobStream
+            </summary>
+            <param name="conn">Conexión a la base</param>
+            <param name="transaction">Transacción o null si graba blob sin transaccionar</param>
+            <param name="tableName">Tabla de destino</param>
+            <param name="blobColumn">Columna de destino</param>
+            <param name="keyColumn">Clave primaria de la tabla de destino</param>
+            <param name="keyValue">Valor de la clave primaria</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.BlobStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Escribe chunk binario a la base de datos
+            </summary>
+            <param name="buffer">Buffer de datos a escribir</param>
+            <param name="index">Posición inicial dentro del buffer</param>
+            <param name="count">Cantidad de bytes a partir de la posición inicial</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.BlobStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Lee chunk binario de la base de datos
+            </summary>
+            <param name="buffer">Buffer de datos recibidos</param>
+            <param name="offset">Posición inicial dentro del buffer</param>
+            <param name="count">Cantidad de bytes a partir de la posición inicial</param>
+            <returns></returns>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.BlobStream.Dispose(System.Boolean)">
+            <summary>
+            Libera recursos utilizados
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.BlobStream.Flush">
+            <summary>
+            Flush
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.BlobStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            Seek
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.BlobStream.SetLength(System.Int64)">
+            <summary>
+            SetLength
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Datos.Sql.BlobStream.CanRead">
+            <summary>
+            CanRead
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Datos.Sql.BlobStream.CanWrite">
+            <summary>
+            CanWrite
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Datos.Sql.BlobStream.CanSeek">
+            <summary>
+            CanSeek
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Datos.Sql.BlobStream.Length">
+            <summary>
+            Length
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Datos.Sql.BlobStream.Position">
+            <summary>
+            Position
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Datos.Sql.CommandExtensions">
+            <summary>
+            Extensiones de un DbCommand
+            </summary>
+            <remarks>
+            No se uso IDbCommand porque los parametros no soportan AddRange
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.CommandExtensions.SetParameters(System.Data.Common.DbCommand,System.Object[])">
+            <summary>
+            Asigna todos los parámetros 
+            usando características de descubrimiento y caché de parámetros
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Datos.Sql.DataReaderExtensions">
+            <summary>
+            Extensiones a la interfaz IDataReader
+            </summary>
+            <remarks>
+            Métodos ordenados alfabetico por tipo de dato
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor boolean
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetBoolean(System.Data.IDataReader,System.String,System.Boolean)">
+            <summary>
+            Devuelve un valor boolean o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetNullableBoolean(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor boolean o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetByte(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor byte
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetByte(System.Data.IDataReader,System.String,System.Byte)">
+            <summary>
+            Devuelve un valor byte o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetNullableByte(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor byte o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor DateTime
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetDateTime(System.Data.IDataReader,System.String,System.DateTime)">
+            <summary>
+            Devuelve un valor DateTime o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetNullableDateTime(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor DateTime o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetDecimal(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor decimal
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetDecimal(System.Data.IDataReader,System.String,System.Decimal)">
+            <summary>
+            Devuelve un valor Decimal o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetNullableDecimal(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor decimal o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetDouble(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor double
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetDouble(System.Data.IDataReader,System.String,System.Double)">
+            <summary>
+            Devuelve un valor Double o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetNullableDouble(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor double o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetInt32(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int32
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetInt32(System.Data.IDataReader,System.String,System.Int32)">
+            <summary>
+            Devuelve un valor Int32 o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetNullableInt32(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int32 o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetInt64(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int64
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetInt64(System.Data.IDataReader,System.String,System.Int64)">
+            <summary>
+            Devuelve un valor Int64 o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetNullableInt64(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor Int64 o null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetString(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor string
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetString(System.Data.IDataReader,System.String,System.String)">
+            <summary>
+            Devuelve un valor String o un valor default por null
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.DataReaderExtensions.GetNullableString(System.Data.IDataReader,System.String)">
+            <summary>
+            Devuelve un valor String o null
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Datos.Sql.FluentCommand`1">
+            <summary>
+            Wrapper liviano de comandos ADO.NET
+            </summary>
+            <remarks>
+            Basado en código open source de Chris Brandsma
+            </remarks>
+            <see>
+            http://fluentado.codeplex.com/
+            </see>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.#ctor(System.String)">
+            <summary>
+            Inicializa una nueva instancia de la case FluentCommand
+            </summary>
+            <param name="commandText">Store producedure o sentencia SQL parametrizada</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetConnection(System.Data.IDbConnection)">
+            <summary>
+            Asigna la conexión al comando
+            </summary>
+            <param name="connection">Conexión abierta</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetTransaction(System.Data.IDbTransaction)">
+            <summary>
+            Asigna una transacción al comando
+            </summary>
+            <param name="transaction">Objeto transacción</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetCommandType(System.Data.CommandType)">
+            <summary>
+            Asigna el CommandType
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetCommandTimeout(System.Int32)">
+            <summary>
+            Asigna el CommandTimeout
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetMapper(System.Func{System.Data.IDataReader,`0})">
+            <summary>
+            Asigna una función para mapear el DataReader al objeto T
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetDirection(System.Data.ParameterDirection)">
+            <summary>
+            Asigna la dirección (input/output) del ultimo parametro agregado
+            </summary>
+            <param name="direction">ParameterDirection</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetParameters(System.Object[])">
+            <summary>
+            Asigna todos los parámetros 
+            usando características de descubrimiento y caché de parámetros
+            </summary>
+            <param name="list">Lista de parámetros en el mismo orden definido en el stored procedure</param>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.GetParamValue(System.String)">
+            <summary>
+            Devuelve el valor de un parámetro de output 
+            luego de haberse ejecutado el query
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AsReader">
+            <summary>
+            Devuelve el resultado en un DataReader
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AsList">
+            <summary>
+            Devuelve el resultado en un IList
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AsEnumerable">
+            <summary>
+            Devuelve un IEnumerable,
+            permitiendo hacer un foreach para consumir los objetos a medida que llegan del servidor
+            sin necesidad de cargarlos todos en memoria
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AsScalar">
+            <summary>
+            Devuelve la primer columna de la primera fila
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AsSingle">
+            <summary>
+            Devuelve la primera fila
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AsNonQuery">
+            <summary>
+            Ejecuta el query y devuelve la cantidad de filas afectadas,
+            excepto cuando el SP tiene la sentencia SET NOCOUNT ON
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.Add``1(System.String,``0)">
+            <summary>
+            Add
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddInt32(System.String)">
+            <summary>
+            AddInt
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddInt32(System.String,System.Int32)">
+            <summary>
+            AddInt
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddInt32(System.String,System.Nullable{System.Int32})">
+            <summary>
+            AddInt
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDecimal(System.String)">
+            <summary>
+            AddDecimal
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDecimal(System.String,System.Decimal)">
+            <summary>
+            AddDecimal
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDecimal(System.String,System.Nullable{System.Decimal})">
+            <summary>
+            AddDecimal
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDateTime(System.String)">
+            <summary>
+            AddDateTime
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDateTime(System.String,System.DateTime)">
+            <summary>
+            AddDateTime
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDateTime(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            AddDateTime
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDateTime2(System.String,System.DateTime)">
+            <summary>
+            AddDateTime2
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDateTime2(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            AddDateTime2
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDate(System.String)">
+            <summary>
+            AddDate (nuevo de SqlServer 2008)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDate(System.String,System.DateTime)">
+            <summary>
+            AddDate (nuevo de SqlServer 2008)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddDate(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            AddDate (nuevo de SqlServer 2008)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddString(System.String,System.Int32,System.String)">
+            <summary>
+            AddString
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddString(System.String)">
+            <summary>
+            AddString
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddString(System.String,System.Int32)">
+            <summary>
+            AddString
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddString(System.String,System.String)">
+            <summary>
+            AddString
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddGuid(System.String)">
+            <summary>
+            AddGuid
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddGuid(System.String,System.Guid)">
+            <summary>
+            AddGuid
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddGuidID(System.String)">
+            <summary>
+            AddGuidID
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddBoolean(System.String)">
+            <summary>
+            AddBoolean
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.AddBoolean(System.String,System.Boolean)">
+            <summary>
+            AddBoolean
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.CreateParam(System.String,System.Data.SqlDbType,System.Object)">
+            <summary>
+            CreateParam
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.CreateParam(System.String,System.Data.SqlDbType)">
+            <summary>
+            CreateParam
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetParamValue(System.Object)">
+            <summary>
+            SetParamValue is used when setting parameter values 
+            and you want to ensure that a null value is set to DBNull.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.FluentCommand`1.SetGuidParamValue(System.Guid)">
+            <summary>
+            SetParamValue is used when setting parameter values 
+            and you want to ensure that a null value is set to DBNull.
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Datos.Limpieza.LimpiezaFechas">
+            <summary>
+            Helper de limpieza de Fechas
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaFechas.FormatearRangoFechaFTS(System.DateTime,System.DateTime)">
+            <summary>
+            Divide un rango de fechas en rangos "predefinidos" para buscar
+            en campos concentradores de datos para busquedas full text search.
+            </summary>
+            <param name="desde">Fecha desde a buscar</param>
+            <param name="hasta">Fecha hasta a buscar</param>
+            <returns>Fechas formateadas para buscar</returns>
+            <remarks>
+            Los rangos predefinidos en los que se convertira el rango ingresado
+            por parametros son:
+             1 dia      Fec_yyyyddmm
+             5 dias     FecN5_yyyyddXX : donde XX puede ser 00 05 10 15 20 o 25
+            10 dias     FecN4_yyyyddXX : donde XX puede ser 00 10 o 20
+             1 mes      FecN3_yyyymm
+             1 anio     FecN2_yyyy
+            10 anios    FecN1_yyyy
+            El resultado sera la concatenacion de varias de las formas anteriores,
+            segun la amplitud del rango pasado por parametro
+            Los rangos de 5 días se cuentan a partir de 0 (por mas q no exista dia 0)
+            en consecuencia se tendra   FecN5_yyyydd00 : 0..4
+                                        FecN5_yyyydd05 : 5..9 etc
+            Los rangos de 10 días se cuentan a partir de 0, idem caso 5, en consecuencia:
+                                        FecN4_yyyydd00 : 0..9
+                                        FecN4_yyyydd05 : 10..19 etc        /// 
+            </remarks>
+        </member>
+        <member name="T:NS.Librerias.Datos.Limpieza.LimpiezaTextos">
+            <summary>
+            Helper de limpieza de strings
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarNombreParaBusqueda(System.String)">
+            <summary>
+            Devuelve una condición de búsqueda (LIKE o FTS) de un nombre propio<br />
+            Realiza las siguientes limpiezas:<br />
+            - Texto en mayúsculas<br />
+            - Caracteres especiales<br />
+            - Números<br />
+            - Letras solas<br />
+            - Palabras duplicadas<br />
+            - Espacios seguidos<br />
+            - Limpia palabras irrelevantes
+            </summary>
+            <param name="textoSucio">Texto de búsqueda sucio</param>
+            <returns>Texto de búsqueda Limpio</returns>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarNombreABuscar(System.String)">
+            <summary>
+            Devuelve una condición de búsqueda (LIKE o FTS) de un nombre propio<br />
+            Realiza las siguientes limpiezas:<br />
+            - Texto en mayúsculas<br />
+            - Caracteres especiales<br />
+            - Números<br />
+            - Palabras duplicadas<br />
+            - Espacios seguidos<br />
+            </summary>
+            <param name="textoSucio">Texto de búsqueda sucio</param>
+            <returns>Texto de búsqueda Limpio</returns>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.PonerTextoMayuscula(System.String)">
+            <summary>
+            Etapa 1 - Lleva a UPPER CASE la palabra y limpia espacios en 
+            blanco al final y al comienzo del texto.
+            Tambien elimina los puntos seguidos, solo deja un punto por 
+            ocurrencia de n puntos en el texto en proceso
+            </summary>
+            <param name="textoSucio">Texto a limpiar.</param>
+            <returns>Texto homogeneo.</returns>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarAmpersandGuion(System.Text.StringBuilder)">
+            <summary>
+            Etapa 2 - Reemplaza el ampersand, guion, y guion bajo por el caracter vacio.
+            Si el ampersand o guion se encuentran en medio de dos caracteres => los une.
+            Ej. C&amp;A => CA
+            </summary>
+            <param name="textoSucio">Texto a limpiar.</param>
+            <returns>Texto sin ampersand ni guiones</returns>        
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarPuntos(System.Text.StringBuilder)">
+            <summary>
+            Etapa 3 - Elimina los puntos del texto.
+            Si el punto se encuentra dividiendo caracteres => los une
+            Ej. S.R.L. => SRL
+            </summary>
+            <param name="textoSucio">Texto a limpiar.</param>
+            <returns>Texto sin puntos.</returns>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarAsterisco(System.Text.StringBuilder,System.Boolean)">
+            <summary>
+            Etapa 4 - Reemplaza los asteriscos existentes en el texto por el caracter vacio.        
+            </summary>
+            <param name="sb">Texto a limpiar.</param>
+            <param name="limpiaAlFinal">Si verdadero, limpia todos los '*' del texto.</param>
+            <returns>Texto sin asteriscos.</returns>
+            <remarks>
+            Reemplaza los asteriscos existentes en el texto por
+            el caracter vacio.
+            Si limpiaAlFinal = true => Limpia todos los asteriscos del texto.
+            Si limpiaAlFinal = false => Limpia todos los asteriscos que NO esten 
+                                        al final de una palabra.
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarCaracteresEspeciales(System.Text.StringBuilder,System.Boolean)">
+            <summary>
+            Etapa 5 - Reemplaza los caracteres especiales (tildes, dieresis, etc)
+            por caracteres limpios para la busqueda
+            </summary>
+            <param name="textoSucio">Texto homogeneo, sin ampersand, guiones, puntos ni asteriscos.</param>
+            <param name="limpiaAsteriscoFinal">Limpia el asterico final de cada palabra</param>
+            <remarks>
+            Reemplaza todos los caracteres que puedan causar errores o redundancias en las indexaciones o busquedas.
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarNumeros(System.Text.StringBuilder)">
+            <summary>
+            Etapa 6 - Elimina los numeros de las palabras a indexar o de busqueda
+            </summary>
+            <param name="texto">Texto homogeneo, sin caracteres especiales de acuerdo a los metodos de las etpas anteriores.</param>        
+            <remarks>
+            Reemplaza todos los numeros que existan en el texto por el caracter vacio
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarLetrasSolas(System.Text.StringBuilder)">
+            <summary>
+            Etapa 7- Elimina todas las letras sueltas que no formen parte de una palabra.
+            </summary>
+            <param name="texto">Texto procesado por las etapas anteriores</param>
+            <remarks>
+            Reemplaza todas las letras solas que encuentra por espacio
+            excepto que todo el texto sea solo una letra
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarPalabrasDuplicadas(System.Text.StringBuilder)">
+            <summary>
+            Etapa 8 - Elimina las palabras duplicadas del texto a analizar
+            (indexar o para busqueda fts)
+            </summary>
+            <param name="texto">Texto procesado por las etapas anteriores</param>
+            <remarks>
+            Elimina las palabras duplicadas que generan redundancia a la hora 
+            de indexar o prepara el texto para una busqueda FTS
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarPalabrasNot(System.Text.StringBuilder)">
+            <summary>
+            Etapa 9 - Eliminas las palabras comunes que no queremos indexar
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Limpieza.LimpiezaTextos.LimpiarEspaciosSeguidos(System.Text.StringBuilder)">
+            <summary>
+            Etapa 10 - Elimina las ocurrencias de n espacios seguidos 
+            solo puede existir un espacio para dividir palabras
+            del texto en proceso
+            </summary>
+            <param name="sb"></param>
+        </member>
+        <member name="T:NS.Librerias.Datos.Sql.SqlParameterCache">
+            <summary>
+            Cache de parametros de stored procedures
+            </summary>
+            <remarks>
+            La primera vez consulta a la base con el método DeriveParameters
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.SqlParameterCache.GetParameters(System.String,System.String)">
+            <summary>
+            Devuelve los parámetros de un stored procedure
+            sin usar parámetro de retorno
+            </summary>
+            <param name="connectionString">String de conexión a la base</param>
+            <param name="spName">Nombre del stored procedure</param>
+            <returns>Array de parámetros del stored procedure</returns>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.SqlParameterCache.GetParameters(System.String,System.String,System.Boolean)">
+            <summary>
+            Devuelve los parámetros de un stored procedure
+            </summary>
+            <param name="connectionString">String de conexión a la base</param>
+            <param name="spName">Nombre del stored procedure</param>
+            <param name="includeReturnValueParameter">Especifica si devuelve en el primer parametro el valor de retorno</param>
+            <returns>Array de parámetros del stored procedure</returns>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.SqlParameterCache.DiscoverSpParameterSet(System.String,System.String,System.Boolean)">
+            <summary>
+            Descubrimiento de parametros con el método DeriveParameters
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Sql.SqlParameterCache.CloneParameters(System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Clonación completa (deep) del array de parámetros
+            </summary>
+            <remarks>
+            Necesaria para evitar devolver la referencia a un elemento de cache
+            </remarks>
+        </member>
+        <member name="T:NS.Librerias.Datos.Validacion.Documentos">
+            <summary>
+            Helper de validación de documentos
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.EsDeEmpresa(System.String)">
+            <summary>
+            Devuelve si un CUIT/CUIL es de empresa
+            Tiene que estar limpio
+            </summary>
+            <remarks>Rutina VB6 Doc_ElCuitEsDeEmpresa</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.ObtenerPrefijoCuit(System.String)">
+            <summary>
+            Devuelve el PrefijoCuit de un CUIT/CUIL
+            Tiene que estar limpio
+            </summary>
+            <remarks>Rutina VB6 Doc_Sexo_Determinar</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.ObtenerDni(System.String,System.Boolean)">
+            <summary>
+            Devuelve el "idx" -> DNI,LE,LC
+            Si no se envía true en docEstaLimpio, asume que el documento está sucio
+            </summary>
+            <remarks>Rutina VB6 Doc_RegresarIDX</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.ObtenerCuit(System.String)">
+            <summary>
+            Calcula el o los CUITs correspondientes a personas a partir de un documento
+            </summary>
+            <remarks>Rutina VB6 Doc_Calcular_DocToCUITs</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.CalcularCuit(System.String,NS.Librerias.Datos.PrefijoCuit)">
+            <summary>
+            Calcula un CUIT en función del documento y PrefijoCuit recibidos.
+            </summary>
+            <remarks>Rutina VB6 Doc_Calcular_CUIT</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.CalcularCuit(System.String,NS.Librerias.Datos.PrefijoCuit,System.Boolean)">
+            <summary>
+            Calcula un CUIT en función del documento y PrefijoCuit recibidos.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.ValidarCuitParaCI(System.String)">
+            <summary>
+            Verifica el CUIT para los Datos CI
+            </summary>
+            <remarks>Rutina VB6 Doc_CUIT_Verificar_los2Digitos</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.EsCuit(System.String)">
+            <summary>
+            Verifica si el documento es un CUIT
+            Se espera un documento limpio
+            </summary>
+            <remarks>Rutina VB6 Doc_EsCuit</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.EsDni(System.String)">
+            <summary>
+            Verifica si el documento es un DNI/LC/LE/CI
+            Se espera un documento limpio
+            </summary>
+            <remarks>Rutina VB6 Doc_EsDNI</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.EsDniEstricto(System.String)">
+            <summary>
+            Verifica si el documento es un DNI
+            Se espera un documento limpio
+            </summary>
+            <remarks>Rutina VB6 Doc_EsDNI_Estricto</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.VerificarDigitosCuit(System.String)">
+            <summary>
+            Verifica los dos primeros digitos de un CUIT
+            Se espera un documento limpio
+            </summary>
+            <remarks>Rutina VB6 Doc_CUIT_Verificar_los2Digitos</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.EsDocumentoValido(System.String)">
+            <summary>
+            Verifica si el documento es un DNI, un CUIT o tiene entre 2 y 4 caracteres
+            Se espera un documento limpio
+            </summary>
+            <remarks>Rutina VB6 Doc_EsValido</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.Limpiar(System.String)">
+            <summary>
+            Limpia un documento, deja solo los números y quita los ceros del comienzo
+            </summary>
+            <remarks>Rutina VB6 Doc_Limpiar</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.CuitEsValido(System.String)">
+            <summary>
+            Devuelve si el cuit es valido
+            </summary>
+            <remarks>Rutina VB6 Doc_CUIT_Verificar</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.CalcularDigitoVerificador(System.String)">
+            <summary>
+            Devuelve el digito verificador de un documento
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.Formatear(System.String)">
+            <summary>
+            Formatea un Documento - CUIT y DNI
+                20-14500600-7
+                14.500.600
+            </summary>
+            <remarks>Rutina VB6 Doc_Formatear</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.Procesar(System.String,System.String@,System.String@,System.Int64@,NS.Librerias.Datos.PrefijoCuit@)">
+            <summary>
+            Verifica la Validez de un Documento
+            </summary>
+            <remarks>Rutina VB6 Doc_Procesar</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.Procesar(System.String,System.String@,System.String@,System.Int64@)">
+            <summary>
+            Verifica la Validez de un Documento
+            </summary>
+            <remarks>Rutina VB6 Doc_Procesar</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.Procesar(System.String,System.String@,System.String@)">
+            <summary>
+            Verifica la Validez de un Documento
+            </summary>
+            <remarks>Rutina VB6 Doc_Procesar</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.Documentos.Procesar(System.String,System.String@)">
+            <summary>
+            Verifica la Validez de un Documento
+            </summary>
+            <remarks>Rutina VB6 Doc_Procesar</remarks>
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.NosisHelper.EsUsuarioNosisoIT(System.String)">
+            <summary>
+            Devuelve si el usuario es personal de Nosis o de IT
+            Considera cuitEmpresa Limpio        
+            </summary>        
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.NosisHelper.EsClienteNosis(System.Int32)">
+            <summary>
+            Devuelve si el código de cliente pertenece a un usuario de nosis
+            </summary>   
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.NosisHelper.EsUsuarioInvisible(System.Int32)">
+            <summary>
+            Devuelve si el usuario es "Invisible"
+            </summary>   
+        </member>
+        <member name="M:NS.Librerias.Datos.Validacion.NosisHelper.EsUsuarioDesarrollo(System.Int32)">
+            <summary>
+            Devuelve si el usuario es del sector Desarrollo
+            </summary>        
+        </member>
+        <member name="T:NS.Librerias.Diagnostico.Ambiente">
+            <summary>
+            Ambientes de producción o desarrollo
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Diagnostico.Ambiente.Produccion">
+            <summary>
+            Ambiente de producción
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Diagnostico.Ambiente.Desarrollo">
+            <summary>
+            Ambiente de desarrollo
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Diagnostico.Aplicacion">
+            <summary>
+            Propiedades generales de la aplicacion
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Diagnostico.Aplicacion.Log">
+            <summary>
+            Log default de la aplicación
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Diagnostico.Aplicacion.Nombre">
+            <summary>
+            Devuelve el nombre del proceso.
+            Por defecto devuelve el nombre obtenido por reflection
+            y se puede hacer override con parámetro "Aplicacion.Nombre" en archivo de configuración
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Diagnostico.Aplicacion.Ambiente">
+            <summary>
+            Devuelve el ambiente donde actúa la aplicación.
+            Por defecto obtiene el valor de SAC_Parametros.ini
+            y se puede hacer override con parámetro "Aplicacion.Ambiente" en el archivo de configuración
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Diagnostico.Aplicacion.CarpetaLogs">
+            <summary>
+            Devuelve la ubicación de los archivos de logs.
+            Por defecto es "D:\Logs"
+            y se puede hacer override con parámetro "Aplicacion.Logs" en el archivo de configuración
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Diagnostico.Severidad">
+            <summary>
+            Nivel de severidad de log
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Diagnostico.Severidad.Debug">
+            <summary>
+            Debug solo se usa para mostrar información técnica
+            que ayude a depurar la aplicación
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Diagnostico.Severidad.Info">
+            <summary>
+            Informativo se usa para mostrar situaciones de funcionamiento normal
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Diagnostico.Severidad.Warn">
+            <summary>
+            Adevertencia se usa cuando el proceso pudo completarse aunque hubo ciertas anomalías 
+            (ej. asumir defaults por falta de configuración, o exceso en tiempo de proceso)
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Diagnostico.Severidad.Error">
+            <summary>
+            Error se usa cuando un proceso individual no pudo completarse pero la aplicación continúa funcionando
+            (ej. argumentos en un pedido, o error de acceso a la base de datos)
+            </summary>
+        </member>
+        <member name="F:NS.Librerias.Diagnostico.Severidad.Fatal">
+            <summary>
+            Fatal se usa cuando la aplicación no puede continuar procesando requerimientos
+            (ej. error permanente de conexión a base de datos, o falta de configuración necesaria para iniciar)
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Diagnostico.Logger">
+            <summary>
+            Clase de log
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.#ctor">
+            <summary>
+            Inicializa un nuevo logger default usando nombre de la aplicación
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.#ctor(System.String)">
+            <summary>
+            Inicializa un nuevo logger
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Debug(System.String)">
+            <summary>
+            Graba evento conteniendo información técnica que ayude a depurar la aplicación
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Debug(System.String,System.Object[])">
+            <summary>
+            Graba evento conteniendo información técnica que ayude a depurar la aplicación
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Info(System.String)">
+            <summary>
+            Graba evento informando situaciones normales de la aplicación
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Info(System.String,System.Object[])">
+            <summary>
+            Graba evento informando situaciones normales de la aplicación
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Warn(System.String)">
+            <summary>
+            Graba evento advirtiendo anomalías en un proceso aunque haya finalizado correctamente
+            (ej. asumir defaults por falta de configuración, o exceso en tiempo de proceso)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Warn(System.String,System.Object[])">
+            <summary>
+            Graba evento advirtiendo anomalías en un proceso aunque haya finalizado correctamente
+            (ej. asumir defaults por falta de configuración, o exceso en tiempo de proceso)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Warn(System.Exception,System.String,System.Object[])">
+            <summary>
+            Graba evento advirtiendo anomalías en un proceso aunque haya finalizado correctamente
+            (ej. asumir defaults por falta de configuración, o exceso en tiempo de proceso)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Error(System.String)">
+            <summary>
+            Graba evento cuando un proceso individual no pudo completarse pero la aplicación continúa funcionando
+            (ej. argumentos en un pedido, o error de acceso a la base de datos)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Error(System.String,System.Object[])">
+            <summary>
+            Graba evento cuando un proceso individual no pudo completarse pero la aplicación continúa funcionando
+            (ej. argumentos en un pedido, o error de acceso a la base de datos)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Error(System.Exception,System.String,System.Object[])">
+            <summary>
+            Graba evento cuando un proceso individual no pudo completarse pero la aplicación continúa funcionando
+            (ej. argumentos en un pedido, o error de acceso a la base de datos)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Fatal(System.String)">
+            <summary>
+            Graba evento cuando la aplicación completa no puede continuar realizando procesamiento
+            (ej. error permanente de conexión a base de datos, o falta de configuración necesaria para iniciar)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Fatal(System.String,System.Object[])">
+            <summary>
+            Graba evento cuando la aplicación completa no puede continuar realizando procesamiento
+            (ej. error permanente de conexión a base de datos, o falta de configuración necesaria para iniciar)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.Fatal(System.Exception,System.String,System.Object[])">
+            <summary>
+            Graba evento cuando la aplicación completa no puede continuar realizando procesamiento
+            (ej. error permanente de conexión a base de datos, o falta de configuración necesaria para iniciar)
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.GrabarMensaje(NS.Librerias.Diagnostico.Severidad,System.String)">
+            <summary>
+            Grabacion interna de un evento
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.GrabarMensaje(NS.Librerias.Diagnostico.Severidad,System.String,System.String)">
+            <summary>
+            Grabacion interna de un evento
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.GrabarEvento(System.String,System.String)">
+            <summary>
+            Realiza append al final del archivo
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.FormatearEvento(NS.Librerias.Diagnostico.Severidad,System.String)">
+            <summary>
+            Devuelve la linea de log completa para ser grabada
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.ArmarMensaje(System.String,System.Object[])">
+            <summary>
+            Arma el mensaje para loggear
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.ArmarMensaje(System.Exception,System.String,System.Object[])">
+            <summary>
+            Arma el mensaje para loggear
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.ArmarMensajeError(System.Exception,System.String,System.Object[])">
+            <summary>
+            Arma el mensaje de error para loggear
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.ObtenerArchivoLogs">
+            <summary>
+            Arma el path al archivo de log
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.ObtenerArchivoErrores">
+            <summary>
+            Arma el path al archivo de errores
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.Logger.ObtenerArchivo(System.String)">
+            <summary>
+            Arma el path a un archivo cualquiera de logs
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Diagnostico.Logger.ModoDebug">
+            <summary>
+            Devuelve si el logger se encuentra en Modo Debug
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Diagnostico.MonitorApp">
+            <summary>
+            Clase de monitoreo de aplicaciones
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.MonitorApp.#ctor">
+            <summary>
+            Constructor privado del singleton
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.MonitorApp.Inicializar">
+            <summary>
+            Inicializa el monitor de aplicaciones 
+            con keep alive automático cada 10 seg.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Diagnostico.MonitorApp.TimerAliveHandler(System.Object)">
+            <summary>
+            Timer de keep alive
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Diagnostico.MonitorApp.Instancia">
+            <summary>
+            Instancia única
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Fechas.DateInterval">
+            <summary>
+            Intervalos para la funcion DateDiff
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Fechas.FechaHelper">
+            <summary>
+            Helper de fechas
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.#cctor">
+            <summary>
+             Constructor estatico
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.AgregarDiasHabiles(System.DateTime,System.Int32)">
+            <summary>
+            Suma o Resta dias hábiles a una fecha
+            (no entiende de feriados)
+            </summary>
+            <param name="date">Fecha original</param>
+            <param name="dias">Cantidad de días positivo o negativo</param>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.LunesAnterior(System.DateTime)">
+            <summary>
+            Devuelve el lunes anterior a la fecha solicitada
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.PrimeraFechaDelMes(System.DateTime)">
+            <summary>
+            Devuelve el 1er dia del mes con hora 0:00:00.000
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.UltimaFechaDelMes(System.DateTime)">
+            <summary>
+            Devuelve el ultimo día del mes con hora 23:59:59.999
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.FinDeDia(System.DateTime)">
+            <summary>
+            Devuelve la misma fecha con hora 23:59:59.999
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.EsBisiesto(System.DateTime)">
+            <summary>
+            Retorna si el año de la fecha pasada es bisiesto
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.EsBisiesto(System.Int32)">
+            <summary>
+            Retorna si el año pasada es bisiesto
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.ToStringLocal(System.DateTime,System.String)">
+            <summary>
+            Formatea la fecha/hora con cultura es-AR
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.ToStringAmigable(System.DateTime)">
+            <summary>
+            Formatea una fecha utilizando 
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.ParseExact(System.Int32)">
+            <summary>
+            Crea un DateTime a partir de una fecha numérica en formato yyyymmdd
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.ParseExact(System.Int32,System.Int32)">
+            <summary>
+            Crea un DateTime a partir de una fecha y hora
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.CalcularEdad(System.DateTime)">
+            <summary>
+            Calcula la edad 
+            </summary>        
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.FechaDateToInt(System.DateTime)">
+            <summary>
+            Convierte una fecha en formato Date a "int" (yyyyMMdd)
+            </summary>    
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.FechaTimeToInt(System.DateTime)">
+            <summary>
+            Convierte una fecha en formato Time a "int" (HHmmss)
+            </summary>    
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.DateDiff(NS.Librerias.Fechas.DateInterval,System.DateTime,System.DateTime)">
+            <summary>
+            Devuelve la diferencia entre 2 fechas, en un intervalo especificado
+            </summary>          
+        </member>
+        <member name="M:NS.Librerias.Fechas.FechaHelper.DateDiff(NS.Librerias.Fechas.DateInterval,System.DateTime,System.DateTime,System.DayOfWeek)">
+            <summary>
+            Devuelve la diferencia entre 2 fechas, en un intervalo especificado
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Fechas.FechaHelper.HusoLocal">
+            <summary>
+            Huso local obtenido de la configuración de la máquina
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Fechas.FechaHelper.CulturaLocal">
+            <summary>
+            Devuelve la cultura local
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Fechas.ProgramadorTareas">
+            <summary>
+            Programador de Tareas
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.#ctor">
+            <summary>
+            Inicializa una nueva instancia del programador de tareas
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.Agregar(System.String,System.Object)">
+            <summary>
+            Agrega una tarea al programador
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.Remover(System.Object)">
+            <summary>
+            Remueve una tarea del programador
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.Actualizar(System.String,System.Object)">
+            <summary>
+            Actualiza una tarea del programador
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.Iniciar">
+            <summary>
+            Inicia el proceso de programacion de tareas 
+            para que arranque la ejecución dentro de 1 minuto
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.Iniciar(System.TimeSpan)">
+            <summary>
+            Inicia el proceso de programacion de tareas
+            especificando cuando corre por primera vez
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.Detener">
+            <summary>
+            Detiene el proceso de programacion de tareas
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.Limpiar">
+            <summary>
+            Limpia la lista de tareas
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.ObtenerProximaEjecucion(System.Object)">
+            <summary>
+            Devuelve la proxima ejecución asociada a un dato adicional suministrado
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.TimerHandler(System.Object)">
+            <summary>
+            Timer de ejecucion
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.OnEjecutor(NS.Librerias.Fechas.TareaProgramadaEventArgs)">
+            <summary>
+            Ejecutor de una tarea
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.VerificarEjecucion(NS.Librerias.Fechas.TareaProgramadaEventArgs,System.DateTime)">
+            <summary>
+            Verficia si es tiempo de ejecutar una tarea
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.CalcularProximaEjecucion(NS.Librerias.Fechas.TareaProgramadaEventArgs,System.DateTime)">
+            <summary>
+            Calcula un mes para adelante cuando es la proxima ejecucion de una tarea.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.Parser(System.String,System.String@,System.String@,System.String@,System.String@)">
+            <summary>
+            Parses a runat expression
+            </summary>
+            <param name="horario">expression to parse</param>
+            <remarks>
+            Use the format below:
+            	[DayNumber|DayWeek]:Hour:Minute
+            Where:
+            	DayNumber	1 to 31
+            	DayWeek		Do,Lu,Ma,Mi,Ju,Vi,Sa
+            	Hour		0 to 23
+            	Minute		0 to 59
+            Or can be expressed just like:
+            	Lu-Vi			monday to friday
+            	Lu,Mi,Vi		monday, wedsney, friday
+            	1-5,10-15,31	1 to 5 and 10 to 15 and 31
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.ParseNumericList(System.String)">
+            <summary>
+            Parse a numeric list 
+            containing comma delimited values and from-to value pairs
+            </summary>
+            <param name="list">Expression to parse</param>
+            <returns>Expanded list of integers or empty string for all values</returns>
+            <remarks>
+            The last separator char in the list is keept for searching issues.
+            The willcard '*' means no restriction, and the function returns an empty string.
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.ParseDayOfWeekList(System.String)">
+            <summary>
+            Parse a mnemonic days of week list 
+            containing comma delimited values and from-to value pairs
+            </summary>
+            <param name="list">Expression to parse</param>
+            <returns>Expanded list of integers from 0 to 7 or empty string for all values</returns>
+            <remarks>
+            The last separator char in the list is keept for searching issues.
+            The willcard '*' means no restriction, and the function returns an empty string.
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Fechas.ProgramadorTareas.ConvertDayWeek(System.String)">
+            <summary>
+            Gets the day of week number associated to a mnemonic value
+            </summary>
+            <param name="dayWeek">Mnemonic day of week</param>
+            <returns>Integer from 0 (Sunday) to 7 (Saturday)</returns>
+        </member>
+        <member name="P:NS.Librerias.Fechas.ProgramadorTareas.Invocador">
+            <summary>
+            Devuelve o asigna el form o control donde se ejecutará el evento de recepción
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Fechas.ProgramadorTareas.Iniciado">
+            <summary>
+            Devuelve si el timer del programador está en funcionamiento
+            </summary>
+        </member>
+        <member name="E:NS.Librerias.Fechas.ProgramadorTareas.Ejecutor">
+            <summary>
+            Evento de ejecución de tarea
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Fechas.TareaProgramadaEventArgs">
+            <summary>
+            Item de una tarea programada
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Fechas.EjecutorEventHandler">
+            <summary>
+            Delegate
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mail.MailSender.LeerBandejaSalida">
+            <summary>
+            Lee la carpeta del MailSender de NS_Parametros.ini
+            Si no existe la clave usa un default 
+            </summary>        
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.ColaCliente">
+            <summary>
+            Cola utilizada por los clientes que deseen conectarse a un motor
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.#ctor(System.String,System.String)">
+            <summary>
+            Inicializa una nueva instancia de la clase ColaCliente
+            con formato de envio compatible con VB6
+            </summary>
+            <param name="nombreColaServicio">Cola de servicio o null para solo recibir respuestas</param>
+            <param name="nombreColaRespuesta">Cola de respuesta o null si no se esperan respuestas del servicio</param>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Inicializa una nueva instancia de la clase SimpleQueue
+            especificando el formato default a utilizar en el envio de mensajes
+            </summary>
+            <param name="nombreColaServicio">Cola de servicio o null para solo recibir respuestas</param>
+            <param name="nombreColaRespuesta">Cola de respuesta o null si no se esperan respuestas del servicio</param>
+            <param name="compatibleVB6">Indica si el formateador sera compatible con VB6</param>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.Dispose">
+            <summary>
+            Implementa interfaz IDisposable
+            Metodo invocado por programa finaliza recursos manejados y no manejados
+            y avisa al GC que el objeto ya fue finalizado.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.Finalize">
+            <summary>
+            Finalizador invocado por el GC
+            Solo debe realizar cleanup de los recursos no manejados
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.Dispose(System.Boolean)">
+            <summary>
+            Dispose pattern
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.EnviarPedido(System.String,System.Object)">
+            <summary>
+            Envía un pedido permitiendo asignar directamente el cuerpo y la etiqueta.
+            Devuelve el id del mensaje enviado que será utilizado posteriormente para obtener la respuesta
+            </summary>
+            <param name="etiqueta">Etiqueta del pedido</param>
+            <param name="cuerpo">Cuerpo del pedido</param>
+            <returns>Devuelve el id del pedido enviado</returns>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.EnviarPedido(NS.Librerias.Mensajeria.MensajePedido)">
+            <summary>
+            Envia un pedido optimizado para uso de streams.
+            Devuelve el id del mensaje enviado que será utilizado posteriormente para obtener la respuesta
+            </summary>
+            <param name="pedido">Pedido creado con el metodo CrearNuevoPedido</param>
+            <returns>Devuelve el id del mensaje enviado</returns>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.CrearNuevoPedido(System.String)">
+            <summary>
+            Devuelve un pedido vacio para ser llenado usando streams
+            </summary>
+            <param name="etiqueta">Etiqueta del pedido</param>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.RecibirRespuesta(System.String,System.TimeSpan)">
+            <summary>
+            Devuelve la respuesta de un pedido especificado,
+            null por timeout o excepción por error
+            </summary>
+            <param name="idPedido">Identificador del pedido obtenido previamente con el metodo EnviarPedido</param>
+            <param name="timeoutRecepcion">Tiempo de espera hasta que arribe la respuesta solicitada</param>
+            <returns>El objeto recibido, null por timeout, o excepción por error</returns>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.ReceiveCallback(System.Object,System.Messaging.ReceiveCompletedEventArgs)">
+            <summary>
+            Callback de recepcion asincronica
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.OnRespuestaRecibida(NS.Librerias.Mensajeria.RespuestaEventArgs)">
+            <summary>
+            Invoca al evento RespuestaRecibida
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.NewMessage(System.String)">
+            <summary>
+            Crea un mensaje MQ vacio para envio 
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaCliente.SetSendProperties(System.Messaging.Message)">
+            <summary>
+            Asigna propiedades de envio
+            </summary>
+        </member>
+        <member name="E:NS.Librerias.Mensajeria.ColaCliente.RespuestaRecibida">
+            <summary>
+            Evento de recepcion asincrónica de una mensaje
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaCliente.TimeoutEnvio">
+            <summary>
+            Asigna o devuelve el tiempo de vida de los pedidos enviados.
+            Default: 100 seg.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaCliente.Persistente">
+            <summary>
+            Asigna o devuelve si los pedidos enviados persistirán 
+            aún cuando se apaguen los equipos de origen o destino.
+            Default: false
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaCliente.PrioridadAlta">
+            <summary>
+            Asigna o devuelve si los pedidos se enviarán con alta prioridad.
+            Default: false
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaCliente.Invocador">
+            <summary>
+            Asigna o devuelve el form donde se ejecutará el evento de recepción
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.RespuestaEventArgs">
+            <summary>
+            Argumento de la recepción asincronica que contiene un mensaje de respuesta
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.RespuestaEventArgs.#ctor(System.Messaging.Message)">
+            <summary>
+            Constructor interno
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.RespuestaEventArgs.Respuesta">
+            <summary>
+            Devuelve la respuesta recibida
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.RespuestaRecibidaEventHandler">
+            <summary>
+            Handler de recepción asincrónica
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.ColaHelper">
+            <summary>
+            Helper de uso comun
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaHelper.#cctor">
+            <summary>
+            Constructor estatico
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaHelper.SetQueueDefaultProperties(System.Messaging.MessageQueue)">
+            <summary>
+            Asigna las propiedades default de la cola
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaHelper.SetBody(System.Messaging.Message,System.Object)">
+            <summary>
+            Codifica un mensaje a enviar
+            </summary>
+            <remarks>
+            Cuando el formateador es ActiveX se asume que es posible que interactue 
+            con una aplicación VB6, en ese caso los strings los convierte a array de bytes
+            para reducir el tamaño del paquete transmitido.
+            Las librerias de VB6 a partir de la versión 4, soporta esta modalidad 
+            y lo vuelve a convertir a un string unicode.
+            El formateador binario esta pensado para que interactue con una aplicación .NET, 
+            en ese caso todos los tipos de datos se serializan en forma nativa.
+            </remarks>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaHelper.GetBody(System.Messaging.Message)">
+            <summary>
+            Deserializa el cuerpo de un mensaje recibido
+            </summary>
+            <see>Ver comentario del método ToBody</see>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaHelper.GetXmlReader(System.Messaging.Message)">
+            <summary>
+            Devuelve un XmlReader para leer un xml del stream del mensaje recibido
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaHelper.GetXmlWriter(System.Messaging.Message)">
+            <summary>
+            Devuelve un XmlWriter para generar un xml en el stream de un mensaje a enviar
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaHelper.ArmarFormatName(System.String)">
+            <summary>
+            Devuelve el format name completo de una cola de servicio
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaHelper.ObtenerInterfazLocal">
+            <summary>
+            Devuelve la interfaz local de la red 7 o 6
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.ColaServicio">
+            <summary>
+            Cola de servicio utilizada por los motores para recibir pedidos
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.#ctor(System.String)">
+            <summary>
+            Inicializa una nueva instancia de la clase ColaServicio
+            con formato de envio compatible con VB6
+            </summary>
+            <param name="nombreCola">FormatName completo de la cola, o solo el nombre para abrir cola privada local</param>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.#ctor(System.String,System.Boolean)">
+            <summary>
+            Inicializa una nueva instancia de la clase ColaServicio
+            especificando el formato default a utilizar en el envio de mensajes
+            </summary>
+            <param name="nombreCola">FormatName completo de la cola, o solo el nombre para abrir cola privada local</param>
+            <param name="compatibleVB6">Indica si el formateador sera compatible con VB6</param>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.Dispose">
+            <summary>
+            Implementa interfaz IDisposable
+            Metodo invocado por programa finaliza recursos manejados y no manejados
+            y avisa al GC que el objeto ya fue finalizado.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.Finalize">
+            <summary>
+            Finalizador invocado por el GC
+            Solo debe realizar cleanup de los recursos no manejados
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.Dispose(System.Boolean)">
+            <summary>
+            Dispose pattern
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.Responder(NS.Librerias.Mensajeria.MensajePedido,System.String,System.Object)">
+            <summary>
+            Responde un mensaje al cliente permitiendo asignar directamente el cuerpo y etiqueta
+            </summary>
+            <param name="pedido">Obtenido del argumento del evento PedidoRecibido</param>
+            <param name="etiquetaRespuesta">Etiqueta de la respuesta</param>
+            <param name="cuerpoRespuesta">Cuerpo de la respuesta</param>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.Responder(NS.Librerias.Mensajeria.MensajePedido,NS.Librerias.Mensajeria.MensajeRespuesta)">
+            <summary>
+            Responde un mensaje al cliente optimizado para el uso de streams
+            </summary>
+            <param name="pedido">Obtenido del argumento del evento PedidoRecibido</param>
+            <param name="respuesta">Mensaje de respuesta creado con el metodo CrearNuevaRespuesta</param>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.CrearNuevaRespuesta(System.String)">
+            <summary>
+            Devuelve una nueva respuesta vacía optimizada para uso de streams
+            </summary>
+            <param name="etiquetaRespuesta">Etiqueta de la respuesta</param>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.RecibirPedido(System.TimeSpan)">
+            <summary>
+            Devuelve el primer pedido pendiente de proceso,
+            null si no hay pedidos (timeout) o excepción por error
+            </summary>
+            <param name="timeoutRecepcion">Tiempo de espera hasta que arribe la respuesta solicitada</param>
+            <returns>El pedido recibido, null por timeout, o excepción por error</returns>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.ReceiveCallback(System.Object,System.Messaging.ReceiveCompletedEventArgs)">
+            <summary>
+            Callback de recepcion asincronica
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.OnPedidoRecibido(NS.Librerias.Mensajeria.PedidoEventArgs)">
+            <summary>
+            Invoca al evento MensajeRecibido
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.NewMessage(System.String)">
+            <summary>
+            Crea un mensaje MQ vacio para envio 
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.ColaServicio.SetSendProperties(System.Messaging.Message)">
+            <summary>
+            Asigna propiedades de envio
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaServicio.Invocador">
+            <summary>
+            Devuelve o asigna el form o control donde se ejecutará el evento de recepción
+            </summary>
+        </member>
+        <member name="E:NS.Librerias.Mensajeria.ColaServicio.PedidoRecibido">
+            <summary>
+            Evento de recepcion de un mensaje
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaServicio.NombreCola">
+            <summary>
+            Nombre de la cola de servicio.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaServicio.TimeoutEnvio">
+            <summary>
+            Asigna o devuelve el tiempo de vida de las respuestas enviadas.
+            Default: 100 seg.
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaServicio.Persistente">
+            <summary>
+            Asigna o devuelve si las respuestas enviadas persistirán 
+            aún cuando se apaguen los equipos de origen o destino.
+            Default: false
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.ColaServicio.PrioridadAlta">
+            <summary>
+            Asigna o devuelve si las respuestas se enviarán con alta prioridad.
+            Default: false
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.PedidoEventArgs">
+            <summary>
+            Argumento de la recepción asincronica que contiene un mensaje de pedido
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.PedidoEventArgs.#ctor(System.Messaging.Message)">
+            <summary>
+            Constructor interno
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.PedidoEventArgs.Pedido">
+            <summary>
+            Devuelve el pedido recibido
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.PedidoRecibidoEventHandler">
+            <summary>
+            Handler de recepción asincrónica
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.MessageReceivedEventArgs">
+            <summary>
+            MessageReceivedEventArgs
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.MessageReceivedEventArgs.#ctor(System.Messaging.Message)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.MessageReceivedEventArgs.Msg">
+            <summary>
+            Devuelve el mensaje recibido
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.MessageReceivedEventHandler">
+            <summary>
+            Delegate
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.Mensaje">
+            <summary>
+            Wrapper de un mensaje MSMQ
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.Mensaje.#ctor(System.Messaging.Message)">
+            <summary>
+            Constructor interno
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.Mensaje.Flush">
+            <summary>
+            Asegura que el stream a enviar este completo
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.Mensaje.Msg">
+            <summary>
+            Devuelve el mensaje nativo MSMQ que wrappea esta clase
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.Mensaje.Cuerpo">
+            <summary>
+            Cuerpo del mensaje para ser consumido casteando al tipo de dato esperado
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.Mensaje.XmlReader">
+            <summary>
+            Cuerpo del mensaje devuelto como stream XmlReader
+            para ser consumido en un XDocument o XmlDocument
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.Mensaje.XmlWriter">
+            <summary>
+            XmlWriter para escribir XML directamente al cuerpo del mensaje
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.Mensaje.Etiqueta">
+            <summary>
+            Etiqueta del mensaje
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.Mensaje.AppSpecific">
+            <summary>
+            Dato arbitrario utilizado por algunas aplicaciones
+            para procesar respuestas masivas
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.Mensaje.BodyStream">
+            <summary>
+            Cuerpo del mensaje devuelto en un stream 
+            para ser consumido sin necesidad de convertir a string
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.Mensaje.BodyType">
+            <summary>
+            Tipo de dato contenido en el stream.
+            Utilizado cuando un motor devuelve respuestas con distintos tipos de datos
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.MensajePedido">
+            <summary>
+            Mensaje de pedido
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.MensajePedido.#ctor(System.Messaging.Message)">
+            <summary>
+            Constructor interno
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.MensajePedido.IdPedido">
+            <summary>
+            Identificador del pedido
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.MensajePedido.ResponseQueue">
+            <summary>
+            Cola de respuesta
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Mensajeria.MensajeRespuesta">
+            <summary>
+            Mensaje de respuesta de un pedido
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Mensajeria.MensajeRespuesta.#ctor(System.Messaging.Message)">
+            <summary>
+            Constructor interno
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.MensajeRespuesta.IdPedido">
+            <summary>
+            Identificador del pedido que genero esta respuesta
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Mensajeria.MensajeRespuesta.IdRespuesta">
+            <summary>
+            Identificador de esta respuesta
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Sockets.IPHelper">
+            <summary>
+            Helper de IP
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.IPHelper.ParseLocalAddress(System.String)">
+            <summary>
+            Devuelve la interfaz local asociada a una subred
+            o IPAddress.Any si no hay coincidencias
+            </summary>
+            <param name="subnet">String en formato "192.168.7"</param>
+            <returns>Devuelve la interfaz local o IPAddress.Any si no hay coincidencias</returns>
+        </member>
+        <member name="M:NS.Librerias.Sockets.IPHelper.GetInterfaces">
+            <summary>
+            Devuelve la lista de interfaces locales que tienen IP asignada
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.IPHelper.GetPreferredInterface">
+            <summary>
+            Devuelve la IP local en este orden:
+            Red de servicio (.7 o .6)
+            Red interna (.12 .13 .14)
+            o IPAddress.Any si no hay coincidencias
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Sockets.Multicast.ReceptorMulticast">
+            <summary>
+            Recepcion de paquetes multicast
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.#ctor(System.Int32)">
+            <summary>
+            Inicializa una nueva instancia de la clase ReceptorMulticast
+            en la dirección multicast local 224.0.0.1, 
+            y usando la interfaz default para recepción
+            </summary>
+            <param name="puertoMulticast">Puerto multicast</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.#ctor(System.Int32,System.String)">
+            <summary>
+            Inicializa una nueva instancia de la clase ReceptorMulticast
+            en la dirección multicast local 224.0.0.1, 
+            y especificando la interfaz para recepción
+            </summary>
+            <param name="puertoMulticast">Puerto multicast</param>
+            <param name="direccionLocal">Interfaz local de recepción, puede ser una subred</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.#ctor(System.String,System.Int32)">
+            <summary>
+            Inicializa una nueva instancia de la clase ReceptorMulticast
+            usando la interfaz default de atención
+            </summary>
+            <param name="direccionMulticast">Dirección IP multicast Ej. 224.0.0.1 a 239.255.255.255</param>
+            <param name="puertoMulticast">Puerto multicast</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            Inicializa una nueva instancia de la clase ReceptorMulticast
+            </summary>
+            <param name="direccionMulticast">Dirección IP multicast Ej. 224.0.0.1 a 239.255.255.255</param>
+            <param name="puertoMulticast">Puerto multicast</param>
+            <param name="direccionLocal">Interfaz local de recepción, puede ser una subred</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.Dispose">
+            <summary>
+            Implementa interfaz IDisposable
+            Metodo invocado por programa finaliza recursos manejados y no manejados
+            y avisa al GC que el objeto ya fue finalizado.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.Finalize">
+            <summary>
+            Finalizador invocado por el GC
+            Solo debe realizar cleanup de los recursos no manejados
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.Dispose(System.Boolean)">
+            <summary>
+            Dispose pattern
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.Responder(System.Net.EndPoint,System.String)">
+            <summary>
+            Envia un mensaje al emisor multicast 
+            </summary>
+            <param name="remoteEndPoint">Se obtiene de MulticastEventArgs</param>
+            <param name="mensaje">Mensaje a enviar</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.CrearSocketReceptor(System.String,System.Int32,System.String)">
+            <summary>
+            Inicializa un socket para recepcion multicast
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.ReceptorMulticast.ReceiveCompleteCallback(System.IAsyncResult)">
+            <summary>
+            Callback de recepcion
+            </summary>
+        </member>
+        <member name="E:NS.Librerias.Sockets.Multicast.ReceptorMulticast.MensajeRecibido">
+            <summary>
+            Evento de recepción de un mensaje multicast enviado por el emisor
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Sockets.Multicast.EmisorMulticast">
+            <summary>
+            Envio de paquetes multicast
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.#ctor(System.Int32)">
+            <summary>
+            Inicializa una nueva instancia de la clase EmisorMulticast
+            en la dirección multicast local 224.0.0.1, 
+            y usando la interfaz de salida default
+            </summary>
+            <param name="puertoMulticast">Puerto multicast</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.#ctor(System.Int32,System.String)">
+            <summary>
+            Inicializa una nueva instancia de la clase EmisorMulticast
+            en la dirección multicast local 224.0.0.1, 
+            y especificando la interfaz de salida
+            </summary>
+            <param name="puertoMulticast">Puerto multicast segun el enum Multicastport</param>
+            <param name="direccionLocal">Interfaz local de salida, puede ser una subred tambien</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.#ctor(System.String,System.Int32)">
+            <summary>
+            Inicializa una nueva instancia de la clase EmisorMulticast
+            usando la interfaz de salida default
+            </summary>
+            <param name="direccionMulticast">Dirección IP multicast Ej. 224.0.0.1 a 239.255.255.255</param>
+            <param name="puertoMulticast">Puerto multicast</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            Inicializa una nueva instancia de la clase EmisorMulticast
+            </summary>
+            <param name="direccionMulticast">Dirección IP multicast Ej. 224.0.0.1 a 239.255.255.255</param>
+            <param name="puertoMulticast">Puerto multicast</param>
+            <param name="direccionLocal">Interfaz local de salida, puede ser una subred tambien</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.Dispose">
+            <summary>
+            Implementa interfaz IDisposable
+            Metodo invocado por programa finaliza recursos manejados y no manejados
+            y avisa al GC que el objeto ya fue finalizado.
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.Finalize">
+            <summary>
+            Finalizador invocado por el GC
+            Solo debe realizar cleanup de los recursos no manejados
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.Dispose(System.Boolean)">
+            <summary>
+            Dispose pattern
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.Enviar(System.String)">
+            <summary>
+            Envia un mensaje multicast 
+            </summary>
+            <param name="mensaje">Mensaje a enviar</param>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.CrearSocketEmisor(System.String,System.Int32,System.String)">
+            <summary>
+            Inicializa un socket para envio de paquetes multicast
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.EmisorMulticast.ReceiveCompleteCallback(System.IAsyncResult)">
+            <summary>
+            Callback de recepcion
+            </summary>
+        </member>
+        <member name="E:NS.Librerias.Sockets.Multicast.EmisorMulticast.RespuestaRecibida">
+            <summary>
+            Evento de recepción de una respuesta del receptor multicast
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Sockets.Multicast.MulticastEventArgs">
+            <summary>
+            MulticastEventArgs
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Sockets.Multicast.MulticastEventArgs.#ctor(System.String,System.Net.EndPoint)">
+            <summary>
+            Constructor para armar un nuevo evento
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Sockets.Multicast.MulticastEventArgs.Msg">
+            <summary>
+            Mensaje recibido
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Sockets.Multicast.MulticastEventArgs.RemoteEndPoint">
+            <summary>
+            Endpoint del sender
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Sockets.Multicast.MulticastEventArgs.RemoteAddress">
+            <summary>
+            Dirección IP del sender
+            </summary>
+        </member>
+        <member name="P:NS.Librerias.Sockets.Multicast.MulticastEventArgs.RemotePort">
+            <summary>
+            Puerto del sender
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Sockets.Multicast.MulticastEventHandler">
+            <summary>
+            Delegate Multicast
+            </summary>
+        </member>
+        <member name="T:NS.Librerias.Xml.XmlTextWriterExtensions">
+            <summary>
+            Extensiones de un XmlTextWriter
+            </summary>
+        </member>
+        <member name="M:NS.Librerias.Xml.XmlTextWriterExtensions.WriteCDataElementString(System.Xml.XmlTextWriter,System.String,System.String)">
+            <summary>
+            Escribe un elemento completo encapsulado en un CDATA
+            </summary>
+        </member>
+    </members>
+</doc>
