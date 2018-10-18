@@ -18,7 +18,7 @@ namespace Processor.Source
         {
             get
             {
-                return Parametros.NS.LeerStringConexion("IT-Induccion", "usrsac");
+                return Parametros.NS.CrearStringConexion("**********", "***********");
             }
         }
 
